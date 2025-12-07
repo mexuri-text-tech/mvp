@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./demo.css";
+import "./project.css";
 
 const Step1BrandInfo = ({ formData, handleInputChange, handleButtonSelect, isActive, validationErrors }) => (
     <div className="form-step">
@@ -17,6 +17,21 @@ const Step1BrandInfo = ({ formData, handleInputChange, handleButtonSelect, isAct
             />
             {validationErrors.companyName && (
                 <p className="error-message">{validationErrors.companyName}</p>
+            )}
+        </div>
+
+        <div className="field">
+            <label htmlFor="companyEmail">Company Email</label>
+            <input
+                type="email"
+                id="companyEmail"
+                placeholder="What is your company's email?"
+                value={formData.companyEmail || ''}
+                onChange={handleInputChange}
+                autoComplete="email"
+            />
+            {validationErrors.companyEmail && (
+                <p className="error-message">{validationErrors.companyEmail}</p>
             )}
         </div>
 
@@ -131,16 +146,18 @@ const Step2Needs = ({ formData, handleInputChange, handleButtonSelect, isActive,
                         onClick={() => handleButtonSelect("brandNeeds", "Sales Funnel Audit")}
                     />
                 </div>
+
+                <label htmlFor="projectRequirement" style={{ margin: "1.3rem 0" }}>Describe your project</label>
                 <textarea
-                    name="otherNeeds"
-                    id="otherNeeds"
-                    placeholder="If Other (Please specify)"
-                    value={formData.otherNeeds || ''}
+                    name="projectRequirement"
+                    id="projectRequirement"
+                    placeholder="Describe your project"
+                    value={formData.projectRequirement || ''}
                     onChange={handleInputChange}
                 ></textarea>
             </div>
-            {validationErrors.brandNeeds && (
-                <p className="error-message">{validationErrors.brandNeeds}</p>
+            {validationErrors.projectRequirement && (
+                <p className="error-message">{validationErrors.projectRequirement}</p>
             )}
         </div>
     </div>
@@ -175,7 +192,7 @@ const Step3Conversion = ({ formData, handleInputChange, handleButtonSelect, isAc
                 </div>
             </div>
             {validationErrors.conversionVolume && (
-                <p className="error-message">{validationErrors.conversionVolume}</p>
+                <p className="error-message">{validationErrorsconversionVolume}</p>
             )}
         </div>
 
@@ -225,44 +242,174 @@ const Step3Conversion = ({ formData, handleInputChange, handleButtonSelect, isAc
     </div>
 );
 
-const Step4ContactInfo = ({ formData, handleInputChange, validationErrors }) => (
+const Step4ContactInfo = ({ handleButtonSelect, isActive, validationErrors }) => (
     <div className="form-step">
-        <div className="heading"><h1>Contact Info</h1></div>
+        <div className="heading"><h1>Conversion Health</h1></div>
 
         <div className="field">
-            <label htmlFor="companyEmail">Company Email</label>
-            <input
-                type="email"
-                id="companyEmail"
-                placeholder="What is your company's email?"
-                value={formData.companyEmail || ''}
-                onChange={handleInputChange}
-                autoComplete="email"
-            />
-            {validationErrors.companyEmail && (
-                <p className="error-message">{validationErrors.companyEmail}</p>
+            <label htmlFor="websiteTraffic">What is your monthly website traffic?</label>
+            <div className="websiteTraffic">
+                <div className="input">
+                    <input
+                        type="button"
+                        value="< 100 visitors"
+                        className={isActive("websiteTraffic", "< 100 visitors") ? "active" : ""}
+                        onClick={() => handleButtonSelect("websiteTraffic", "< 100 visitors")}
+                    />
+                    <input
+                        type="button"
+                        value="100 - 500 visitors"
+                        className={isActive("websiteTraffic", "100 - 500 visitors") ? "active" : ""}
+                        onClick={() => handleButtonSelect("websiteTraffic", "100 - 500 visitors")}
+                    />
+                    <input
+                        type="button"
+                        value="> 500 Visitors"
+                        className={isActive("websiteTraffic", "> 500 Visitors") ? "active" : ""}
+                        onClick={() => handleButtonSelect("websiteTraffic", "> 500 Visitors")}
+                    />
+                </div>
+            </div>
+            {validationErrors.websiteTraffic && (
+                <p className="error-message">{validationErrors.websiteTraffic}</p>
+            )}
+        </div>
+
+        <div className="field">
+            <label htmlFor="websiteLeads">How much of these leads converts to sales?</label>
+            <div className="websiteLeads">
+                <div className="input">
+                    <input
+                        type="button"
+                        value="< 10%"
+                        className={isActive("websiteLeads", "< 5%") ? "active" : ""}
+                        onClick={() => handleButtonSelect("websiteLeads", "< 5%")}
+                    />
+                    <input
+                        type="button"
+                        value="10 - 30%"
+                        className={isActive("websiteLeads", "10 - 30%") ? "active" : ""}
+                        onClick={() => handleButtonSelect("websiteLeads", "10 - 30%")}
+                    />
+                    <input
+                        type="button"
+                        value="> 30%"
+                        className={isActive("websiteLeads", "> 30%") ? "active" : ""}
+                        onClick={() => handleButtonSelect("websiteLeads", "> 30%")}
+                    />
+                </div>
+            </div>
+            {validationErrors.websiteLeads && (
+                <p className="error-message">{validationErrors.websiteLeads}</p>
+            )}
+        </div>
+
+        <div className="field">
+            <label htmlFor="conversionGoal">What is your Conversion Rate goal?</label>
+            <div className="conversionGoal">
+                <div className="input">
+                    <input
+                        type="button"
+                        value="15%"
+                        className={isActive("conversionGoal", "15%") ? "active" : ""}
+                        onClick={() => handleButtonSelect("conversionGoal", "15%")}
+                    />
+                    <input
+                        type="button"
+                        value="15 - 30%"
+                        className={isActive("conversionGoal", "15 - 30%") ? "active" : ""}
+                        onClick={() => handleButtonSelect("conversionGoal", "15 - 30%")}
+                    />
+                    <input
+                        type="button"
+                        value="> 30%"
+                        className={isActive("conversionGoal", "> 30%") ? "active" : ""}
+                        onClick={() => handleButtonSelect("conversionGoal", "> 30%")}
+                    />
+                </div>
+            </div>
+            {validationErrors.conversionGoal && (
+                <p className="error-message">{validationErrors.conversionGoal}</p>
+            )}
+        </div>
+
+        <div className="field">
+            <label htmlFor="vouchMetrics">Vouch Metrics - How often do you receive referrals? </label>
+            <div className="vouchMetrics">
+                <div className="input">
+                    <input
+                        type="button"
+                        value="Not Often"
+                        className={isActive("vouchMetrics", "Not Often") ? "active" : ""}
+                        onClick={() => handleButtonSelect("vouchMetrics", "Not Often")}
+                    />
+                    <input
+                        type="button"
+                        value="Moderate"
+                        className={isActive("vouchMetrics", "Moderate") ? "active" : ""}
+                        onClick={() => handleButtonSelect("vouchMetrics", "Moderate")}
+                    />
+                    <input
+                        type="button"
+                        value="> 30%"
+                        className={isActive("vouchMetrics", "> 30%") ? "active" : ""}
+                        onClick={() => handleButtonSelect("vouchMetrics", "> 30%")}
+                    />
+                </div>
+            </div>
+            {validationErrors.vouchMetrics && (
+                <p className="error-message">{validationErrors.vouchMetrics}</p>
+            )}
+        </div>
+
+        <div className="field">
+            <label htmlFor="revenueChecker">What is your Yearly Revenue like? (Optional)</label>
+            <div className="revenueChecker">
+                <div className="input">
+                    <input
+                        type="button"
+                        value="₦35M - ₦50M"
+                        className={isActive("revenueChecker", "₦35M - ₦50M") ? "active" : ""}
+                        onClick={() => handleButtonSelect("revenueChecker", "₦35M - ₦50M")}
+                    />
+                    <input
+                        type="button"
+                        value="₦100M - ₦250M"
+                        className={isActive("revenueChecker", "₦100M - ₦250M") ? "active" : ""}
+                        onClick={() => handleButtonSelect("revenueChecker", "₦100M - ₦250M")}
+                    />
+                    <input
+                        type="button"
+                        value="> ₦300M"
+                        className={isActive("revenueChecker", "> ₦300M") ? "active" : ""}
+                        onClick={() => handleButtonSelect("revenueChecker", "> ₦300M")}
+                    />
+                </div>
+            </div>
+            {validationErrors.revenueChecker && (
+                <p className="error-message">{validationErrors.revenueChecker}</p>
             )}
         </div>
     </div>
 );
 
 // =======================================================
-// 2. MAIN DEMO COMPONENT
+// 2. MAIN project COMPONENT
 // =======================================================
 
-const Demo = () => {
+const Project = () => {
     const totalSteps = 4;
 
     // --- State Management ---
     const [currentStep, setCurrentStep] = useState(1);
-    const [buttonMessage, setButtonMessage] = useState("Submit for Audit");
+    const [buttonMessage, setButtonMessage] = useState("Request for Quote");
     const [showPrompt, setShowPrompt] = useState(false); // Changed initial state to false
     const [validationErrors, setValidationErrors] = useState({});
     const navigate = useNavigate();
     const [navigationMessage, setNavigationMessage] = useState("")
 
     const [formData, setFormData] = useState(() => {
-        const saved = localStorage.getItem("demoFormData");
+        const saved = localStorage.getItem("projectFormData");
         return saved ? JSON.parse(saved) : {};
     });
 
@@ -283,7 +430,7 @@ const Demo = () => {
         const updatedData = { ...formData, [fieldId]: value };
 
         setFormData(updatedData);
-        localStorage.setItem("demoFormData", JSON.stringify(updatedData));
+        localStorage.setItem("projectFormData", JSON.stringify(updatedData));
         setValidationErrors({}); // Clear errors immediately on user interaction
     };
 
@@ -294,7 +441,7 @@ const Demo = () => {
         };
 
         setFormData(updatedData);
-        localStorage.setItem("demoFormData", JSON.stringify(updatedData));
+        localStorage.setItem("projectFormData", JSON.stringify(updatedData));
         setValidationErrors({}); // Clear errors immediately on user interaction
     };
 
@@ -309,6 +456,12 @@ const Demo = () => {
 
         if (step === 1) {
             if (!formData.companyName) errors.companyName = "Company Name is required.";
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Standard basic email regex
+            if (!formData.companyEmail) {
+                errors.companyEmail = "Company Email is required.";
+            } else if (!emailRegex.test(formData.companyEmail)) {
+                errors.companyEmail = "Please enter a valid email address.";
+            }
             if (!formData.product) errors.product = "Products/Services is required.";
             if (!formData.targetAudience) errors.targetAudience = "Target Audience is required.";
             if (!formData.valueProp) errors.valueProp = "Value Proposition is required.";
@@ -317,6 +470,7 @@ const Demo = () => {
 
         if (step === 2) {
             if (!formData.brandNeeds) errors.brandNeeds = "Please select a primary constraint.";
+            if (!formData.projectRequirement) errors.projectRequirement = "Please fill this field"
         }
 
         if (step === 3) {
@@ -331,12 +485,10 @@ const Demo = () => {
         }
 
         if (step === 4) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Standard basic email regex
-            if (!formData.companyEmail) {
-                errors.companyEmail = "Company Email is required.";
-            } else if (!emailRegex.test(formData.companyEmail)) {
-                errors.companyEmail = "Please enter a valid email address.";
-            }
+            if (!formData.websiteTraffic) error.websiteTraffic = "This field is required";
+            if (!formData.websiteLeads) error.websiteLeads = "This field is required";
+            if (!formData.conversionGoal) error.conversionGoal = "This field is required";
+            if (!formData.vouchMetrics) error.vouchMetrics = "This field is required";
         }
 
         return Object.keys(errors).length === 0 ? true : errors;
@@ -388,7 +540,7 @@ const Demo = () => {
         try {
             await delaySubmission();
 
-            const response = await fetch('https://mexuri-mvp.onrender.com/api/audit-request', {
+            const response = await fetch('http://localhost:5000/api/main-project-request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -399,11 +551,11 @@ const Demo = () => {
             if (response.ok) {
                 setButtonMessage("✅ Request Sent!");
                 setFormData({});
-                localStorage.removeItem("demoFormData");
+                localStorage.removeItem("projectFormData");
                 setShowPrompt(true);
 
                 // Reset button text after 5 seconds
-                setTimeout(() => setButtonMessage('Submit for Audit'), 5000);
+                setTimeout(() => setButtonMessage('Request for Quote'), 5000);
 
             } else {
                 console.error("Submission failed on server side.");
@@ -417,28 +569,34 @@ const Demo = () => {
 
 
     return (<>
-        <div className="demo-container">
-            <div className="demo-main">
-                <div className="demo-description">
-                    <div className="demo-header">
-                        <h1>Scale Your Leads: Get Our 14-Day Performance Audit & Strategy</h1>
+        <div className="project-container">
+            <div className="project-main">
+                <div className="project-description">
+                    <div className="project-header">
+                        <h1>Transform Your Pipeline: The Mexuri Full-Funnel Build & Conversion Program</h1>
                     </div>
-                    <div className="demo-body">
+                    <div className="project-body">
                         <p>
-                            Discover your biggest lead constraints with our risk-free, <strong style={{ fontWeight: "600" }}>14-day Lead Management Audit</strong>.
-                            You'll walk away with a clear strategy designed to immediately boost your conversion rate and pipeline health.
+                            This isn't just an audit—it's a strategic partnership designed to fix your biggest revenue bottlenecks. We rebuild the foundations of your growth by optimizing your brand messaging and converting more leads into guaranteed sales.
                         </p>
-                        <p id="packageRequirement" style={{ fontWeight: "500" }}>The 14-Day Package Delivers:</p>
+                        <p>
+                            Stop losing qualified customers due to weak messaging or leaky funnels. Our program provides the strategic assets and technical optimizations needed to achieve sustainable scale.
+                        </p>
+                        <p id="packageRequirement" style={{ fontWeight: "600" }}>The Full Conversion Program Delivers:</p>
+
                         <ul>
+                            <li>Brand Messaging Architecture: Clarifying your unique value to attract your ICP.</li>
+                            <li>Technical CRO Setup & Strategy: Maximizing conversions through data-driven testing.</li>
                             <li>Customized Lead Strategy Roadmap</li>
-                            <li>Research & Competitor Analysis</li>
                             <li>Performance & Funnel Health Audit</li>
-                            <li>2x Strategy Sessions (Review & Roadmap Handover)</li>
+                            <li>Dedicated Strategy Sessions & Results Handover</li>
+                            <li>Conversion System Optimisation</li>
+                            <li>Performance Reports</li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="demo-form">
+                <div className="project-form">
                     <form onSubmit={handleSubmit}>
                         {/* Progress Tracker */}
                         <div className="progress-tracker">
@@ -530,8 +688,8 @@ const Demo = () => {
                     <img src="/check.png" alt="success" />
                     <h1>We've received your request</h1>
                     <p>
-                        Thank you for reaching out to Mexuri! We've successfully received your request.
-                        A member of the Mexuri Team will personally review your inquiry and aim to get
+                        Thank you for reaching out to Mexuri! We've successfully received your project request.
+                        A member of the Mexuri Team will personally review your project needs and get
                         back to you within 24 business hours
                     </p>
 
@@ -544,4 +702,4 @@ const Demo = () => {
     </>);
 };
 
-export default Demo;
+export default Project;

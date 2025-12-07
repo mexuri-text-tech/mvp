@@ -58,7 +58,7 @@ const Home = () => {
 
         // --- Submission Logic ---
         try {
-            const response = await axios.post('http://localhost:5000/api/send-email', formData);
+            const response = await axios.post('https://mexuri-mvp.onrender.com/api/send-email', formData);
 
             if (response.status === 200) {
                 setStatus('Message Sent! We will be in touch shortly.');
@@ -81,17 +81,22 @@ const Home = () => {
             <section className="hero">
                 <div className="hero-main">
                     <div className="figcaption">
-                        <h1 className="headline">The Bridge Between Your Product and Your Audience.</h1>
+                        <h1 className="headline">Stop Leaking Leads. We Turn Your Traffic into Revenue.</h1>
                         <p className="subHeadline">
-                            We offer Lead Management for start ups and scale-ups, helping these brands generate and handle leads to lead to increase in sales and business growth.
-                            <br />
-                            We build deep connections through branding and turn traffic into revenue with CRO.
+                            Mexuri is the growth partner for start-ups and scale-ups.
+                            We fuse strategic branding with Conversion Rate Optimization (CRO)
+                            to ensure high-quality leads turn into consistent, profitable sales.
                         </p>
                     </div>
 
                     <div className="button">
                         <button onClick={() => navigate("/demo")}>
                             Request a Free Demo
+                        </button>
+
+
+                        <button onClick={() => navigate("/project")} style={{ marginLeft: "2rem" }}>
+                            Start your project
                         </button>
                     </div>
                 </div>
@@ -114,15 +119,15 @@ const Home = () => {
                             </header>
 
                             <p>
-                                Start ups in their early stage experience 80-94% of lead loss, most scale ups lose 74-85% of potential clients due to inorganic leads generation.
-                                <br />
-                                Ads are good, but you need effective CRO, so your brand doesn't just get views, but also convert to clients.
-                                <br />
-                                We offer brand-centric lead management, that reduces the lead loss rate.
+                                About 80% of early-stage and growing brands lose a large share of potential clients
+                                because their digital touchpoints aren’t optimized for conversion.
+                                Ineffective lead generation and leaky funnels are costing you millions.
+                                Mexuri implements a full-stack Lead Management system with integrated CRO,
+                                ensuring every click moves closer to a signed contract
                             </p>
 
                             <a href="/demo" id="demoLink">
-                                Get a free demo today
+                                See how it works
                             </a>
                         </figcaption>
                     </figure>
@@ -134,13 +139,11 @@ const Home = () => {
                     <figcaption>
                         <h3>For Start Ups</h3>
 
-                        <h1>Starting something new?</h1>
+                        <h1>Build a Brand That Converts From Day One.</h1>
 
                         <p>
-                            Mexuri acts as a growth partner for start ups, using
-                            branding to create a relationship between them and
-                            their audience then integrating our CRO framework to
-                            ensure that they get high conversion metrics.
+                            Mexuri partners with early-stage founders to build brands people trust and convert. We help you shape your brand identity,
+                            understand your audience, and set up a conversion system that supports steady growth from day one.
                         </p>
 
                         <a href="/demo">
@@ -149,7 +152,7 @@ const Home = () => {
                     </figcaption>
 
                     <div className="image">
-                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/c_crop,ar_3:4/v1764808456/Gemini_2_ekusop.png" alt="start up founder" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765147418/Working_from_Home_Aesthetics_kgyhax.jpg" alt="start up founder" />
                     </div>
                 </figure>
             </section>
@@ -160,14 +163,9 @@ const Home = () => {
                         <h1>Growing 100 African Brands by 2028</h1>
 
                         <p>
-                            Mexuri is working on growing 100 African brands to
-                            become Global names by 2028.
-
-                            <br />
-                            <br />
-                            We believe that African brands have the potential
-                            to be global names, and catering for the needs of
-                            the global market.
+                            Our mission is to support 100 African brands in becoming globally recognized by 2028.
+                            We believe African companies can compete at a global level with the
+                            right strategy, structure, and brand visibility — and we’re committed to helping them get there.
                         </p>
 
                         <a href="#">
@@ -182,14 +180,11 @@ const Home = () => {
                     <figcaption>
                         <h3>For Scale Ups</h3>
 
-                        <h1>Your Business growth is in the Conversion</h1>
+                        <h1>Your Growth Depends on Better Conversions</h1>
 
                         <p>
-                            Your conversion metrics should be your major concern as a
-                            growing business.
-                            <br />
-                            You are getting recognition, but is that recognition turning
-                            into sales?
+                            As your brand grows, recognition alone isn’t enough — you need a system that turns visibility into revenue.
+                            We help scale-ups refine their conversion processes, optimize lead flow, and improve customer experience across every touchpoint.
                         </p>
 
                         <div className="links">
@@ -199,7 +194,7 @@ const Home = () => {
                     </figcaption>
 
                     <div className="image">
-                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1764802934/Whisk_7b9c46ffd494b20908149293a43263bddr_yafxwq.jpg" alt="start up founder" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765150915/__h8pu84.png" alt="start up founder" />
                     </div>
                 </figure>
             </section>
@@ -207,12 +202,13 @@ const Home = () => {
             <section className="end">
                 <div className="main">
                     <figcaption>
-                        <h1>You can track your growth with mexuri</h1>
+                        <h1>The Data-Driven Results You Need</h1>
 
                         <p>
-                            We use a data driven approach to track your company’s
-                            growth. We provide you with detailed weekly/bi-weekly
-                            reports on how your business is growing.
+                            We provide detailed weekly reports focused not just on vanity metrics, but on pipeline health, LTV, and CAC.
+                            <br />
+                            Our data-driven approach gives you clear visibility into your brand’s performance. With timely reports and organic insights,
+                            you’ll always know what’s working, what needs improvement, and how your business is growing.
                         </p>
 
                         <a href="/demo">
@@ -225,31 +221,23 @@ const Home = () => {
             <section className="contact" id="contact">
                 <div className="main">
                     <div className="images">
-                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765016513/Contact_Us_eu4efp.png" alt="" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765149796/__iarbkg.jpg" alt="picture" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765149429/afro_kmnzly.png" alt="picture" />
                     </div>
 
                     <figcaption>
                         <form action="POST" onSubmit={handleSubmit}>
                             <div className="contactHeader">
-                                <h1>Contact Us</h1>
+                                <h1>Get in Touch</h1>
+                                <p>Please feel free to contact us, we would get back to you as soon as we can.</p>
                             </div>
                             <div className="field">
-                                <label htmlFor="companyName">Company/Client's Name</label>
+                                <label htmlFor="companyName">Company Name</label>
                                 <input
                                     type="text"
-                                    placeholder="Business Name"
+                                    placeholder="e.g. Auctora Ltd."
                                     id="companyName"
                                     value={formData.companyName}
-                                    onChange={handleChange}
-                                    style={{ textTransform: "capitalize" }} />
-                            </div>
-                            <div className="field">
-                                <label htmlFor="country">Country</label>
-                                <input
-                                    type="text"
-                                    placeholder="e.g Nigeria, South Africa"
-                                    id="country"
-                                    value={formData.country}
                                     onChange={handleChange}
                                 />
                             </div>
@@ -270,13 +258,13 @@ const Home = () => {
                                 <textarea
                                     name="message"
                                     id="message"
-                                    placeholder="Provide us with futher details"
+                                    placeholder="Provide us with further details"
                                     value={formData.message}
                                     onChange={handleChange}></textarea>
                             </div>
 
                             <button type="submit" disabled={status === 'Sending...'}>
-                                {status === 'Sending...' ? 'Sending...' : 'Send'}
+                                {status === 'Sending...' ? 'Sending...' : 'Send Message'}
                             </button>
 
                             {status && <p style={{ marginTop: '10px' }}>{status}</p>}

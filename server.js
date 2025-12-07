@@ -124,6 +124,85 @@ app.post('/api/audit-request', async (req, res) => {
     }
 });
 
+//Post End Point to get main project data
+app.post('/api/main-project-request', async (req, res) => {
+    // Destructure ALL fields from the React formData object
+    const formData = req.body;
+    const {
+        companyName,
+        companyEmail,
+        product,
+        targetAudience,
+        valueProp,
+        businessModel,
+        brandNeeds,
+        projectRequirements,
+        conversionVolume,
+        conversionSource,
+        businessLink,
+        websiteTraffic,
+        websiteLeads,
+        conversionGoal,
+        vouchMetrics,
+        revenueChecker
+    } = formData;
+
+    const sendSmtpEmail = new Brevo.SendSmtpEmail();
+
+    // ... (Email setup: to, sender, subject, and the detailed HTML content 
+    //      created in the previous response) ...
+    sendSmtpEmail.to = [{ email: 'mexuri.info@gmail.com', name: 'Mexuri Customer Care Team' }];
+    sendSmtpEmail.sender = {
+        email: 'mexuri.info@gmail.com',
+        name: 'Client Project Request'
+    };
+    sendSmtpEmail.subject = `New Project Request: ${companyName || 'Unknown Company'}`;
+    sendSmtpEmail.htmlContent = `
+        <h3>New Project Request</h3>
+        <hr>
+        <h4>Step 1: The Brand</h4>
+        <ul>
+            <li><strong>Company Name:</strong> ${companyName || 'N/A'}</li>
+            <li><strong>Company Email:</strong> ${companyEmail || 'N/A'}</li>
+            <li><strong>Products/Services:</strong> ${product || 'N/A'}</li>
+            <li><strong>ICP (Ideal Customer Profile):</strong> ${targetAudience || 'N/A'}</li>
+            <li><strong>Core Value Proposition:</strong> ${valueProp || 'N/A'}</li>
+            <li><strong>Business Model:</strong> ${businessModel || 'N/A'}</li>
+        </ul>
+        <hr>
+        <h4>Step 2: Brand Needs</h4>
+        <ul>
+            <li><strong>Primary Bottleneck:</strong> ${brandNeeds || 'N/A'}</li>
+            <li><strong>Other Needs Specified:</strong> ${projectRequirements || 'None'}</li>
+        </ul>
+        <hr>
+        <h4>Step 3: Conversion Health</h4>
+        <ul>
+            <li><strong>Monthly Conversion Volume:</strong> ${conversionVolume || 'N/A'}</li>
+            <li><strong>Conversion Source:</strong> ${conversionSource || 'N/A'}</li>
+            <li><strong>Conversion Platform Link:</strong> <a href="${businessLink}">${businessLink || 'N/A'}</a></li>
+        </ul>
+        <hr>
+        <h4>Step 4: Client's Conversion Health</h4>
+        <ul>
+            <li><strong>Website Traffic:</strong> ${websiteTraffic || 'N/A'}</li>
+            <li><strong>Website Leads:</strong> ${websiteLeads || 'N/A'}</li>
+            <li><strong>Client Conversion Goal:</strong> ${conversionGoal || 'N/A'}</li>
+            <li><strong>Client's Vouch Metrics:</strong> ${vouchMetrics || 'N/A'}</li>
+            <li><strong>Client's Yearly Revenue:</strong> ${revenueChecker || 'N/A'}</li>
+        </ul>
+        <hr>
+    `;
+
+    try {
+        await transactionalEmailsApi.sendTransacEmail(sendSmtpEmail);
+        res.status(200).send({ message: 'Audit Request submitted successfully!' });
+    } catch (error) {
+        console.error('Brevo API Error:', error);
+        res.status(500).send({ message: 'Failed to send audit request email.' });
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });

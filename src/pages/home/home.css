@@ -332,26 +332,43 @@ body {
   margin: 0;
 }
 .container .contact .main {
-  width: 97%;
+  width: 98%;
   margin: 2rem auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-content: flex-start;
+  justify-content: center;
+  align-content: center;
   box-shadow: 0 0 2rem white;
   overflow: hidden;
   background: #fefffe;
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgb(230.5, 218.25, 181.5);
 }
 .container .contact .main .images {
+  display: flex;
   flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 12px;
 }
 .container .contact .main .images img {
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: 450px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(31, 27, 24, 0.2), 0 6px 6px rgba(31, 27, 24, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+.container .contact .main .images img:nth-child(odd) {
+  margin: -5rem 0 0 0;
+}
+.container .contact .main .images img:nth-child(even) {
+  margin: 7rem 0 0 -10rem;
 }
 .container .contact .main figcaption {
   flex: 1;
@@ -363,7 +380,10 @@ body {
   width: 100%;
 }
 .container .contact .main figcaption form .contactHeader {
-  display: none;
+  display: block;
+}
+.container .contact .main figcaption form .contactHeader p {
+  padding: 0 7rem 0 0;
 }
 .container .contact .main figcaption form .field {
   display: flex;
@@ -373,7 +393,7 @@ body {
   margin: 1rem auto;
 }
 .container .contact .main figcaption form .field label {
-  margin: 0.7rem 0;
+  margin: 0.3rem 0;
 }
 .container .contact .main figcaption form .field input {
   border-top: 0;
@@ -388,6 +408,12 @@ body {
   border-bottom: 1px solid;
   font-weight: 250;
 }
+.container .contact .main figcaption form .field input::-moz-placeholder {
+  color: #1f1b18;
+}
+.container .contact .main figcaption form .field input::placeholder {
+  color: #1f1b18;
+}
 .container .contact .main figcaption form .field textarea {
   border: 1px solid;
   min-width: 80%;
@@ -396,15 +422,21 @@ body {
   max-height: 100px;
   outline: none;
   padding: 0.5rem;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   resize: none;
   background: transparent;
   -webkit-backdrop-filter: blur(70px);
           backdrop-filter: blur(70px);
   font-weight: 250;
 }
+.container .contact .main figcaption form .field textarea::-moz-placeholder {
+  color: #1f1b18;
+}
+.container .contact .main figcaption form .field textarea::placeholder {
+  color: #1f1b18;
+}
 .container .contact .main figcaption form button {
-  padding: 0.5rem 1.9rem;
+  padding: 0.7rem 1.9rem;
   border: none;
   background: #1f1b18;
   color: #fafad2;
@@ -574,6 +606,9 @@ body {
   }
   .container .contact .main figcaption form .contactHeader h1 {
     font-size: 2rem;
+  }
+  .container .contact .main figcaption form .contactHeader p {
+    padding: 0;
   }
   .container .contact .main figcaption form .field input {
     width: 100%;

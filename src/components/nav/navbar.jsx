@@ -39,8 +39,8 @@ const Navbar = () => {
                         Let's talk
                     </Link>
 
-                    <button>
-                        Try it out
+                    <button onClick={() => navigate("./demo")}>
+                        Get Demo
                     </button>
                 </div>
             </nav>
