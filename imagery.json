@@ -1,0 +1,82 @@
+[
+    {
+        "prompt": "Photo-realistic portrait of a confident founder sitting on a woven rattan chair (similar to the reference image). They are working on an Apple MacBook with a black Apple logo visible. Plain background in soft cream (#fafad2). Surrounding the laptop are warm, hand-drawn illustrative elements: sketched arrows, lightbulb icons, growing plant motifs, and simple line graphs that flow outward like thought-bubbles — arranged to evoke idea-generation, journey and growth. The person wears a deep muted brown jacket with accents of #483c32 (primary) and small touches of #d4af37 (secondary) in accessories. Lighting is soft, studio-lit, natural skin tones, eye-level camera angle. Composition: human-centered, medium shot (knee up). Style: realistic human + 2D illustrated overlays, clean minimal layout, calm and inspirational mood. Include the attached reference image as pose and chair guide.",
+        "style": "photo+illustration",
+        "camera_angle": "eye-level",
+        "lighting": "soft studio light",
+        "background_color": "#fafad2",
+        "color_scheme": {
+            "primary": "#483c32",
+            "secondary": "#d4af37",
+            "accent_light": "#fafad2",
+            "text_dark": "#0c0c0c",
+            "text_light": "#ffffff"
+        },
+        "aspect_ratio": "4:5",
+        "referenced_image_url": "/mnt/data/Screen Shot 2025-11-24 at 11.59.46 AM.png"
+    },
+    {
+        "prompt": "Warm editorial-style portrait: an entrepreneurial founder seated on a round woven chair, laptop open (Apple MacBook with black logo). Plain muted backdrop in #483c32 (use primary color as subtle background tone, slightly desaturated). Surround the laptop with minimal, flat-color illustrations: a timeline ribbon showing milestones, a small rocket sketch, and clusters of dots representing customers — all in #d4af37 and #fafad2 linework. Illustrations should feel hand-crafted and float around the laptop screen like an augmented storyboard. Outfit: neutral trousers and a jacket with subtle #483c32 accents. Camera: 3/4 view, medium-close shot. Style mix: photographic human + flat vector illustrations, elegant and hopeful. Reference the uploaded photo for chair and posture.",
+        "style": "photo+flat-illustration",
+        "camera_angle": "3/4",
+        "lighting": "soft directional",
+        "background_color": "#483c32",
+        "color_scheme": {
+            "primary": "#483c32",
+            "secondary": "#d4af37",
+            "accent_light": "#fafad2",
+            "text_dark": "#0c0c0c",
+            "text_light": "#ffffff"
+        },
+        "aspect_ratio": "3:4",
+        "referenced_image_url": "/mnt/data/Screen Shot 2025-11-24 at 11.59.46 AM.png"
+    },
+    {
+        "prompt": "Clean, minimal scene: founder sitting relaxed in a woven chair (refer to reference) with an Apple MacBook (black apple logo). Background plain off-white (#fafad2). Around the laptop, add whimsical storyboard-style illustrations that tell a founder's journey: small icons for 'idea', 'prototype', 'first customer', 'growth' connected with a thin dotted line — use hand-inked strokes in #483c32 and highlight nodes with #d4af37. Style: human subject photo blended with delicate ink illustrations that feel like a personal notebook. Camera angle: slightly above eye-level, three-quarter crop. Mood: introspective, optimistic. Include reference image for pose and chair.",
+        "style": "photo+ink-illustration",
+        "camera_angle": "slightly-above-eye",
+        "lighting": "soft natural",
+        "background_color": "#fafad2",
+        "color_scheme": {
+            "primary": "#483c32",
+            "secondary": "#d4af37",
+            "accent_light": "#fafad2",
+            "text_dark": "#0c0c0c",
+            "text_light": "#ffffff"
+        },
+        "aspect_ratio": "4:5",
+        "referenced_image_url": "/mnt/data/Screen Shot 2025-11-24 at 11.59.46 AM.png"
+    },
+    {
+        "prompt": "Artistic hybrid: founder photographed on a woven chair working on a MacBook (black logo visible). Background plain, mid-tone cream (#fafad2) with a very subtle, large flat circle in #483c32 behind the subject to frame them. Floating around the laptop are playful, semi-transparent vector illustrations: stacked blocks (product stages), a small bar chart growing upward, and abstract growth leaves; use #d4af37 as accent highlights and thin #483c32 outlines. Human is sharp and photo-real, illustrations are semi-opaque and layered above the scene to suggest ongoing ideas. Camera: medium shot, neutral expression, warm lighting. Style: modern creative, founder-focused, inspiring narrative. Use attached photo for chair + posture guidance.",
+        "style": "photo+vector-overlay",
+        "camera_angle": "medium-shot",
+        "lighting": "warm studio",
+        "background_color": "#fafad2",
+        "color_scheme": {
+            "primary": "#483c32",
+            "secondary": "#d4af37",
+            "accent_light": "#fafad2",
+            "text_dark": "#0c0c0c",
+            "text_light": "#ffffff"
+        },
+        "aspect_ratio": "4:5",
+        "referenced_image_url": "/mnt/data/Screen Shot 2025-11-24 at 11.59.46 AM.png"
+    },
+    {
+        "prompt": "Narrative composition: founder in woven chair (see reference), MacBook with black Apple logo open on lap. Plain pale background (#fafad2). Create a semi-illustrated 'mind map' bursting from the laptop screen — nodes for 'idea', 'users', 'strategy', 'brand', 'growth' — drawn in organic hand-drawn lines in #483c32, with node accents in #d4af37. Include tiny human-figure sketches showing stages of a journey (prototype, first sale, community) to resonate with founders. Keep the human photo crisp and centered; illustrations wrap gently around the subject without obscuring them. Camera: portrait, waist-up. Style: mixed media — realistic portrait + handcrafted illustrative storytelling, calm and aspirational. Reference image used for posture and chair detail.",
+        "style": "photo+mixed-media-illustration",
+        "camera_angle": "portrait waist-up",
+        "lighting": "soft even light",
+        "background_color": "#fafad2",
+        "color_scheme": {
+            "primary": "#483c32",
+            "secondary": "#d4af37",
+            "accent_light": "#fafad2",
+            "text_dark": "#0c0c0c",
+            "text_light": "#ffffff"
+        },
+        "aspect_ratio": "4:5",
+        "referenced_image_url": "/mnt/data/Screen Shot 2025-11-24 at 11.59.46 AM.png"
+    }
+]

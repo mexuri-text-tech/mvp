@@ -1,0 +1,256 @@
+@use "../lib/index" as *;
+@use "sass:color";
+
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-content: $align;
+}
+
+.demo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    background-color: $text-light;
+}
+
+.demo-main {
+    width: 100%;
+    max-width: 1600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+    @media (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.demo-description {
+    background: color.adjust($color: $accent-light, $lightness: 15%);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+    h1 {
+        font-size: $xlarge - 0.3rem;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    ul {
+        margin-top: 1rem;
+        padding-left: 1.4rem;
+
+        li {
+            margin-bottom: 0.6rem;
+            color: #444;
+        }
+    }
+}
+
+/* --------------------------
+   FORM SECTION
+---------------------------*/
+.demo-form {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+    form {
+        width: 100%;
+    }
+}
+
+/* --------------------------
+   PROGRESS TRACKER
+---------------------------*/
+.progress-tracker {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #e0e0e0;
+        color: #555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        transition: 0.3s ease;
+
+        &.active {
+            background: $primary-color;
+            color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+    }
+}
+
+/* --------------------------
+   FORM STEPS
+---------------------------*/
+.form-step {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+
+    .heading {
+        margin-bottom: 0.8rem;
+
+        h1 {
+            font-size: $large - 0.2rem;
+            font-weight: 600;
+        }
+    }
+
+    p {
+        color: red;
+        font-size: $small - 0.1rem;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+
+        label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        input[type="email"],
+        textarea {
+            padding: 0.9rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.6rem;
+            background: #fff;
+            transition: border 0.2s ease, box-shadow 0.2s ease;
+
+            &:focus {
+                border-color: $primary-color;
+                box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+                outline: none;
+            }
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+
+        textarea {
+            height: 110px;
+            resize: none;
+        }
+
+        #businessModel,
+        .brandNeeds,
+        .button-options,
+        .conversionVolume,
+        .conversionSource {
+            @include flex(column, center, center);
+
+            .input {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+                gap: 0.8rem;
+                margin: 1rem 0;
+            }
+
+            input[type="button"] {
+                background: #f5f5f5;
+                border: 1px solid #ddd;
+                padding: 10px 5px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: 0.2s ease;
+
+                @media screen and (max-width: 900px) {
+                    text-align: left;
+                    padding: 10px 14px 10px 20px;
+                }
+
+                &:hover {
+                    background: #eee;
+                }
+
+                &:focus {
+                    outline: none;
+                    background: #e8f0fe; // Google blue tint
+                    border-color: $primary-color;
+                }
+
+                &.active {
+                    background: $primary-color;
+                    border-color: $primary-color;
+                    color: $text-light;
+                }
+            }
+        }
+
+        p {
+            color: red;
+            font-size: $small - 0.1rem;
+        }
+    }
+}
+
+/* --------------------------
+   NAVIGATION BUTTONS
+---------------------------*/
+.navigation-buttons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        padding: 0.9rem 1.4rem;
+        border-radius: 0.6rem;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        transition: 0.25s ease;
+
+        &.prev-button {
+            background: #eee;
+            color: #444;
+
+            &:hover {
+                background: #e2e2e2;
+            }
+        }
+
+        &.next-button {
+            background: $primary-color;
+            color: $text-light;
+
+            &:hover {
+                background: color.adjust($color: $primary-color, $lightness: 6%);
+            }
+        }
+
+        &.submit-button {
+            background: $primary-color;
+            color: #fff;
+
+            &:hover {
+                background: color.adjust($color: $primary-color, $lightness: 4%);
+            }
+        }
+    }
+}
