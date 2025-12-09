@@ -72,6 +72,10 @@ body {
 .container .hero .hero-main .figcaption p {
   margin: 0.7rem 0;
 }
+.container .hero .hero-main .button :nth-child(even) {
+  color: #1f1b18;
+  background-color: #fafad2;
+}
 .container .hero .hero-main .button button {
   padding: 0.9rem 1.5rem;
   border: none;
@@ -172,7 +176,7 @@ body {
 }
 .container .startUp figure figcaption p {
   padding-right: 9rem;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 .container .startUp figure figcaption a {
   color: hsl(25.7142857143, 12.7272727273%, -9.2156862745%);

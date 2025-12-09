@@ -41,7 +41,7 @@
                     gap: 12px;
 
                     .tagline {
-                        color: color.adjust($color: $accent-light, $lightness: 20%);
+                        color: color.adjust($color: $accent-light, $lightness: 0%);
                         letter-spacing: 0.5px;
                         width: 65%;
 
@@ -60,11 +60,11 @@
                         svg {
                             width: 22px;
                             height: 22px;
-                            color: color.adjust($color: $accent-light, $lightness: 1%);
+                            fill: $accent-light;
                             transition: all 0.3s ease;
 
                             &:hover {
-                                color: lighten($secondary-color, 10%);
+                                color: color.adjust($color: $secondary-color, $lightness: 10%);
                                 transform: translateY(-3px);
                             }
                         }
@@ -90,7 +90,7 @@
                         h1 {
                             font-size: $medium - 0.3rem;
                             font-weight: 380;
-                            color: color.adjust($color: $accent-light, $lightness: 1%);
+                            color: $accent-light;
                             margin: 0;
                             border-bottom: 1px solid rgba($secondary-color, 0.4);
                             padding-bottom: 6px;
@@ -138,7 +138,7 @@
 
             .copyright {
                 font-size: $small;
-                color: lighten($accent-light, 15%);
+                color: color.adjust($color: $accent-light, $lightness: -1%);
             }
 
             .terms-and-conditions {
@@ -149,17 +149,21 @@
                     padding: 0;
                     margin: 0;
 
-                    li a {
-                        font-size: $small;
+                    li {
                         color: color.adjust($color: $accent-light, $lightness: -1%);
-                        cursor: pointer;
-                        transition: color 0.3s ease;
-                        text-decoration: none;
 
-                        &:hover {
-                            color: $secondary-color;
+                        a {
+                            font-size: $small;
+                            color: color.adjust($color: $accent-light, $lightness: -1%);
+                            cursor: pointer;
+                            transition: color 0.3s ease;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: $secondary-color;
+                            }
+
                         }
-
                     }
                 }
             }

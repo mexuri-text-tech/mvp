@@ -90,6 +90,12 @@ body {
             }
 
             .button {
+
+                :nth-child(even) {
+                    color: $primary-color;
+                    background-color: $accent-light;
+                }
+
                 button {
                     padding: 0.9rem 1.5rem;
                     border: none;
@@ -185,7 +191,7 @@ body {
 
                 p {
                     padding-right: 9rem;
-                    margin-bottom: 7rem;
+                    margin-bottom: 5rem;
                 }
 
                 a {

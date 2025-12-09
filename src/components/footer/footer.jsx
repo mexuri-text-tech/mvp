@@ -90,7 +90,7 @@ const Footer = () => {
                             <ul>
                                 <li><a href="#">Blog</a></li>
                                 <li><a href="https://www.linkedin.com/company/mexuri/?viewAsMember=true">LinkedIn</a></li>
-                                <li><a href="#">About Us</a></li>
+                                <li><a href="/about">About Us</a></li>
                                 <li><a href="#">Leadership</a></li>
                             </ul>
                         </div>
@@ -114,6 +114,8 @@ const Footer = () => {
                     <div className="terms-and-conditions">
                         <ul>
                             <li><Link to="/terms-and-conditions">Terms and Conditions</Link></li>
+                            <li>||</li>
+                            <li><Link to="/terms-and-conditions#refund-processing">Refund</Link></li>
                         </ul>
                     </div>
                 </div>

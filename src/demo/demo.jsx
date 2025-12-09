@@ -134,7 +134,7 @@ const Step2Needs = ({ formData, handleInputChange, handleButtonSelect, isActive,
                 <textarea
                     name="otherNeeds"
                     id="otherNeeds"
-                    placeholder="If Other (Please specify)"
+                    placeholder="Additional Notes? (Please specify)"
                     value={formData.otherNeeds || ''}
                     onChange={handleInputChange}
                 ></textarea>

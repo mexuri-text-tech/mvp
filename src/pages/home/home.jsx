@@ -160,10 +160,10 @@ const Home = () => {
             <section className="goal">
                 <div className="main">
                     <figcaption>
-                        <h1>Growing 100 African Brands by 2028</h1>
+                        <h1>Growing 100 African Brands by 2038</h1>
 
                         <p>
-                            Our mission is to support 100 African brands in becoming globally recognized by 2028.
+                            Our mission is to support 100 African brands in becoming globally recognized by 2038.
                             We believe African companies can compete at a global level with the
                             right strategy, structure, and brand visibility — and we’re committed to helping them get there.
                         </p>
@@ -189,7 +189,7 @@ const Home = () => {
 
                         <div className="links">
                             <a href="#">What is my conversion rate?</a>
-                            <a href="#">Optimise Leads</a>
+                            <a href="/project">Optimise Leads</a>
                         </div>
                     </figcaption>
 

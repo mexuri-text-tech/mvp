@@ -1,0 +1,139 @@
+* {
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.terms {
+  padding: 2rem;
+  background: linear-gradient(180deg, #fbfaf8 0%, #f6f4f1 100%);
+  color: #0c0c0c;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+.terms__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.terms__header .terms__badge {
+  background: rgb(252.6111111111, 250.5555555556, 243.8888888889);
+  color: #483c32;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid rgba(72, 60, 50, 0.05);
+}
+.terms__header .terms__badge img {
+  width: 5rem;
+}
+.terms__header .terms__headline {
+  font-size: 2rem;
+  margin: 0;
+  color: #483c32;
+  letter-spacing: -0.02em;
+}
+.terms__header .terms__lead {
+  margin: 0;
+  color: rgb(56.9508196721, 47.4590163934, 39.5491803279);
+  font-size: 1.5rem -0.1rem;
+}
+.terms__container {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+.terms__subheader {
+  margin-top: 2.25rem;
+}
+.terms__subheader h2 {
+  margin: 0 0 0.5rem 0;
+  color: #483c32;
+  font-size: 2rem;
+}
+.terms__section {
+  background: rgb(252.6111111111, 250.5555555556, 243.8888888889);
+  border-radius: 12px;
+  padding: 0.5rem;
+  border: 1px solid rgba(72, 60, 50, 0.06);
+  box-shadow: 0 8px 20px rgba(72, 60, 50, 0.04);
+  overflow: hidden;
+}
+.terms__section strong {
+  font-weight: 600;
+}
+.terms__section.is-open {
+  transform: translateY(-2px);
+}
+.terms__section .terms__toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  text-align: left;
+}
+.terms__section .terms__toggle:hover {
+  background: tint(#fafad2, 5%);
+}
+.terms__section .terms__toggle .terms__title {
+  font-size: 1.5rem;
+  color: #483c32;
+  font-weight: 550;
+}
+.terms__section .terms__toggle .terms__chev {
+  font-size: 1.25rem;
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.08);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.terms__section .terms__content {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  color: #0c0c0c;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.terms__section .terms__content p {
+  margin: 0 0 0.6rem 0;
+}
+.terms__section .terms__content ul {
+  margin: 0.5rem 0 0.8rem 1.25rem;
+}
+.terms__section .terms__content ul li {
+  margin: 0.35rem 0;
+}
+.terms__section .terms__content a {
+  color: #483c32;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (min-width: 900px) {
+  .terms {
+    padding: 3rem 4rem;
+  }
+  .terms__container {
+    gap: 1.25rem;
+  }
+  .terms__header .terms__headline {
+    font-size: 4rem;
+  }
+}/*# sourceMappingURL=terms.css.map */

@@ -4,7 +4,7 @@
   direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgb(254.335, 254.335, 249.015);
+  background-color: hsl(60, 80%, 110.6960784314%);
   position: fixed;
   left: 0;
   z-index: 1000;
@@ -129,7 +129,7 @@
 }
 
 .mobile-navbar {
-  background-color: rgb(254.335, 254.335, 249.015);
+  background-color: hsl(60, 80%, 110.6960784314%);
   width: 100%;
   display: flex;
   direction: column;
