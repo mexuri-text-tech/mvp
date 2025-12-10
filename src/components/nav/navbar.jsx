@@ -27,7 +27,7 @@ const Navbar = () => {
 
                 <div className="navlinks">
                     <ul>
-                        <li><Link to="/portfolio">Resources</Link></li>
+                        <li><Link to="/">Resources</Link></li>
                         <li><Link to="https://tally.so/r/31qNzl">Community</Link></li>
                         <li><Link to="/about#vision">Our Vision</Link></li>
                     </ul>
@@ -66,15 +66,16 @@ const Navbar = () => {
             </div>
 
             <ul>
-                <li><Link to="/portfolio">Resources</Link></li>
-                <li><Link to="https://x.com/Mexuri_info">Community</Link></li>
-                <li><Link to="https://tally.so/r/31qNzl">Our Vision</Link></li>
+                <li><Link to="/">Resources</Link></li>
+                <li><Link to="https://tally.so/r/31qNzl">Community</Link></li>
+                <li><Link to="/about#vision">Our Vision</Link></li>
+                <li><Link to="/#contact">Let's Talk</Link></li>
             </ul>
 
             <div className="button">
-                <Link to="/#contact">
+                <Link to="/demo">
                     <button>
-                        Contact us
+                        Get Demo
                     </button>
                 </Link>
             </div>

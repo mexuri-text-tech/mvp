@@ -4,7 +4,7 @@ import "./project.css";
 
 const Step1BrandInfo = ({ formData, handleInputChange, handleButtonSelect, isActive, validationErrors }) => (
     <div className="form-step">
-        <div className="heading"><h1>The Brand</h1></div>
+        <div className="heading"><h1>The Brand - Tell us about your brand</h1></div>
 
         <div className="field">
             <label htmlFor="companyName">Company Name</label>
@@ -147,17 +147,17 @@ const Step2Needs = ({ formData, handleInputChange, handleButtonSelect, isActive,
                     />
                 </div>
 
-                <label htmlFor="projectRequirement" style={{ margin: "1.3rem 0" }}>Describe your project</label>
+                <label htmlFor="projectDescription" style={{ margin: "1.3rem 0" }}>Describe your project</label>
                 <textarea
-                    name="projectRequirement"
-                    id="projectRequirement"
+                    name="projectDescription"
+                    id="projectDescription"
                     placeholder="Describe your project"
-                    value={formData.projectRequirement || ''}
+                    value={formData.projectDescription || ''}
                     onChange={handleInputChange}
                 ></textarea>
             </div>
-            {validationErrors.projectRequirement && (
-                <p className="error-message">{validationErrors.projectRequirement}</p>
+            {validationErrors.projectDescription && (
+                <p className="error-message">{validationErrors.projectDescription}</p>
             )}
         </div>
     </div>
@@ -470,7 +470,7 @@ const Project = () => {
 
         if (step === 2) {
             if (!formData.brandNeeds) errors.brandNeeds = "Please select a primary constraint.";
-            if (!formData.projectRequirement) errors.projectRequirement = "Please fill this field"
+            if (!formData.projectDescription) errors.projectDescription = "Please fill this field"
         }
 
         if (step === 3) {
@@ -540,7 +540,7 @@ const Project = () => {
         try {
             await delaySubmission();
 
-            const response = await fetch('https://mexuri-mvp.onrender.com/api/main-project-request', {
+            const response = await fetch('http://localhost:5000/api/main-project-request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

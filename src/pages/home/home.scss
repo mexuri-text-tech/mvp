@@ -68,6 +68,7 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        height: 100%;
 
         .hero-main {
             height: 100vh;
@@ -93,7 +94,8 @@ body {
 
                 :nth-child(even) {
                     color: $primary-color;
-                    background-color: $accent-light;
+                    background-color: $text-light;
+                    border: 1px solid $primary-color;
                 }
 
                 button {
@@ -471,6 +473,129 @@ body {
     }
 }
 
+// ------------------------------------------------
+//              TABLET RESPONSIVENESS (max-width: 1024px)
+// ------------------------------------------------
+
+@media screen and (max-width: 1024px) {
+    .container {
+
+        // General adjustments for tablet width
+        .hero {
+            .hero-main {
+                .figcaption {
+                    width: 70%; // Increase figcaption width for readability
+                }
+            }
+        }
+
+        .next {
+            .main {
+                figure {
+                    width: 95%; // Wider figure for tablet
+                    height: auto; // Allow height to adjust
+
+                    figcaption {
+                        padding: 1rem 1.5rem 1rem 2rem; // Adjust padding
+                    }
+                }
+            }
+        }
+
+        .startUp,
+        .scaleUps {
+            figure {
+                height: auto;
+                width: 95%;
+                margin: 2rem auto;
+
+                figcaption {
+                    padding: 0 1.5rem;
+                    margin: 0 1rem; // Reduce margin between image and text
+
+                    p {
+                        padding-right: 2rem; // Reduce padding for more line space
+                    }
+                }
+            }
+        }
+
+        .goal {
+            height: 60vh; // Reduce height slightly
+
+            .main {
+                figcaption {
+                    width: 90%; // Wider content area
+
+                    p {
+                        padding-right: 5rem; // Adjust padding on the right
+                    }
+                }
+            }
+        }
+
+        .end {
+            height: 70vh; // Reduce height
+
+            .main {
+                figcaption {
+                    width: 90%;
+
+                    p {
+                        padding-right: 5rem;
+                    }
+                }
+            }
+        }
+
+        .contact {
+            .main {
+                width: 95%;
+
+                .images {
+                    flex: 0.8; // Give less space to the images on tablet
+
+                    img {
+                        width: 300px;
+                        height: 350px;
+
+                        &:nth-child(even) {
+                            margin: 5rem 0 0 -8rem; // Adjust overlap
+                        }
+                    }
+                }
+
+                figcaption {
+                    padding-left: 0; // Ensure padding is manageable
+
+                    form {
+                        .contactHeader {
+                            p {
+                                padding-right: 3rem; // Adjust padding on the right
+                            }
+                        }
+
+                        .field {
+
+                            input,
+                            textarea {
+                                width: 90%; // Increase field width slightly
+                                max-width: 90%;
+                                min-width: 90%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// ------------------------------------------------
+//              MOBILE RESPONSIVENESS (max-width: 900px) - Existing Code
+// ------------------------------------------------
+
 @media screen and (max-width: 900px) {
     .container {
         width: 100%;
@@ -498,10 +623,14 @@ body {
                 figure {
                     @include flex(column, center, center);
                     width: 99%;
+                    height: auto;
+                    /* IMPORTANT: added auto height */
                     border-radius: 1rem;
 
                     .image {
                         flex: 1;
+                        width: 100%;
+                        /* added width 100% to image container */
                     }
 
                     figcaption {
@@ -633,26 +762,21 @@ body {
                 figcaption {
                     padding: 0;
 
-                    .contact-header {
-                        width: 100%;
-                        padding: 0;
+                    .contactHeader {
+                        display: block;
+                        text-align: center;
+
+                        h1 {
+                            font-size: $large;
+                        }
+
+                        p {
+                            padding: 0;
+                        }
                     }
 
                     form {
                         padding: 0;
-
-                        .contactHeader {
-                            display: block;
-                            text-align: center;
-
-                            h1 {
-                                font-size: $large;
-                            }
-
-                            p {
-                                padding: 0;
-                            }
-                        }
 
                         .field {
 

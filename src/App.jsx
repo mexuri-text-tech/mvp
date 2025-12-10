@@ -5,6 +5,7 @@ import ScrollToHash from "./ScrollToHash";
 import Project from "./project/project";
 import About from "./pages/about/about";
 import TermsPage from "./pages/terms/terms";
+import ConversionAuditRequest from "./pages/calc/calc";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route element={<Project />} path="/project" />
         <Route element={<About />} path="/about" />
         <Route element={<TermsPage />} path="/terms-and-conditions" />
+        <Route element={<ConversionAuditRequest />} path="/conversion-audit-request" />
       </Routes>
     </Router>
   )

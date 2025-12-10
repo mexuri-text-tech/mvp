@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 3rem 0 -6rem 0;
+  margin: 3rem 0 2rem 0;
 }
 .footer .footer-main .footer-top .logo-tagline .tagline-links .socials svg {
   width: 22px;

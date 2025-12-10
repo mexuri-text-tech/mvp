@@ -51,6 +51,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 .container .hero .hero-main {
   height: 100vh;
@@ -74,7 +75,8 @@ body {
 }
 .container .hero .hero-main .button :nth-child(even) {
   color: #1f1b18;
-  background-color: #fafad2;
+  background-color: #ffffff;
+  border: 1px solid #1f1b18;
 }
 .container .hero .hero-main .button button {
   padding: 0.9rem 1.5rem;
@@ -447,6 +449,76 @@ body {
   border-radius: 0.2rem;
 }
 
+@media screen and (max-width: 1024px) {
+  .container .hero .hero-main .figcaption {
+    width: 70%;
+  }
+  .container .next .main figure {
+    width: 95%;
+    height: auto;
+  }
+  .container .next .main figure figcaption {
+    padding: 1rem 1.5rem 1rem 2rem;
+  }
+  .container .startUp figure,
+  .container .scaleUps figure {
+    height: auto;
+    width: 95%;
+    margin: 2rem auto;
+  }
+  .container .startUp figure figcaption,
+  .container .scaleUps figure figcaption {
+    padding: 0 1.5rem;
+    margin: 0 1rem;
+  }
+  .container .startUp figure figcaption p,
+  .container .scaleUps figure figcaption p {
+    padding-right: 2rem;
+  }
+  .container .goal {
+    height: 60vh;
+  }
+  .container .goal .main figcaption {
+    width: 90%;
+  }
+  .container .goal .main figcaption p {
+    padding-right: 5rem;
+  }
+  .container .end {
+    height: 70vh;
+  }
+  .container .end .main figcaption {
+    width: 90%;
+  }
+  .container .end .main figcaption p {
+    padding-right: 5rem;
+  }
+  .container .contact .main {
+    width: 95%;
+  }
+  .container .contact .main .images {
+    flex: 0.8;
+  }
+  .container .contact .main .images img {
+    width: 300px;
+    height: 350px;
+  }
+  .container .contact .main .images img:nth-child(even) {
+    margin: 5rem 0 0 -8rem;
+  }
+  .container .contact .main figcaption {
+    padding-left: 0;
+  }
+  .container .contact .main figcaption form .contactHeader p {
+    padding-right: 3rem;
+  }
+  .container .contact .main figcaption form .field input,
+  .container .contact .main figcaption form .field textarea {
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
+  }
+}
 @media screen and (max-width: 900px) {
   .container {
     width: 100%;
@@ -476,10 +548,14 @@ body {
     justify-content: center;
     align-content: center;
     width: 99%;
+    height: auto;
+    /* IMPORTANT: added auto height */
     border-radius: 1rem;
   }
   .container .next .main figure .image {
     flex: 1;
+    width: 100%;
+    /* added width 100% to image container */
   }
   .container .next .main figure figcaption {
     padding: 1rem;
@@ -597,21 +673,17 @@ body {
   .container .contact .main figcaption {
     padding: 0;
   }
-  .container .contact .main figcaption .contact-header {
-    width: 100%;
-    padding: 0;
-  }
-  .container .contact .main figcaption form {
-    padding: 0;
-  }
-  .container .contact .main figcaption form .contactHeader {
+  .container .contact .main figcaption .contactHeader {
     display: block;
     text-align: center;
   }
-  .container .contact .main figcaption form .contactHeader h1 {
+  .container .contact .main figcaption .contactHeader h1 {
     font-size: 2rem;
   }
-  .container .contact .main figcaption form .contactHeader p {
+  .container .contact .main figcaption .contactHeader p {
+    padding: 0;
+  }
+  .container .contact .main figcaption form {
     padding: 0;
   }
   .container .contact .main figcaption form .field input {

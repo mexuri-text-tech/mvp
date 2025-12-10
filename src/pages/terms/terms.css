@@ -1,15 +1,3 @@
-* {
-  font-family: "Red Hat Display", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100, "YTLC" 500;
-  margin: 0;
-  padding: 0;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-}
-
 .terms {
   padding: 2rem;
   background: linear-gradient(180deg, #fbfaf8 0%, #f6f4f1 100%);
@@ -24,8 +12,8 @@
   margin-bottom: 1.5rem;
 }
 .terms__header .terms__badge {
-  background: rgb(252.6111111111, 250.5555555556, 243.8888888889);
-  color: #483c32;
+  background: hsl(45, 50%, 105.7843137255%);
+  color: #1f1b18;
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
   font-weight: 700;
@@ -38,12 +26,12 @@
 .terms__header .terms__headline {
   font-size: 2rem;
   margin: 0;
-  color: #483c32;
+  color: #1f1b18;
   letter-spacing: -0.02em;
 }
 .terms__header .terms__lead {
   margin: 0;
-  color: rgb(56.9508196721, 47.4590163934, 39.5491803279);
+  color: rgb(16.6272727273, 14.4818181818, 12.8727272727);
   font-size: 1.5rem -0.1rem;
 }
 .terms__container {
@@ -56,11 +44,11 @@
 }
 .terms__subheader h2 {
   margin: 0 0 0.5rem 0;
-  color: #483c32;
+  color: #1f1b18;
   font-size: 2rem;
 }
 .terms__section {
-  background: rgb(252.6111111111, 250.5555555556, 243.8888888889);
+  background: hsl(45, 50%, 105.7843137255%);
   border-radius: 12px;
   padding: 0.5rem;
   border: 1px solid rgba(72, 60, 50, 0.06);
@@ -90,13 +78,13 @@
 }
 .terms__section .terms__toggle .terms__title {
   font-size: 1.5rem;
-  color: #483c32;
+  color: #1f1b18;
   font-weight: 550;
 }
 .terms__section .terms__toggle .terms__chev {
   font-size: 1.25rem;
-  color: #d4af37;
-  background: rgba(212, 175, 55, 0.08);
+  color: #cdb469;
+  background: rgba(205, 180, 105, 0.08);
   width: 36px;
   height: 36px;
   border-radius: 8px;
@@ -120,7 +108,7 @@
   margin: 0.35rem 0;
 }
 .terms__section .terms__content a {
-  color: #483c32;
+  color: #1f1b18;
   font-weight: 600;
   text-decoration: underline;
 }

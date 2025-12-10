@@ -1,0 +1,176 @@
+.calc-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: #ffffff;
+}
+
+.calc-main {
+  width: 100%;
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+@media (max-width: 900px) {
+  .calc-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.calc-description {
+  background: hsl(60, 80%, 105.1960784314%);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+.calc-description h1 {
+  font-size: 2.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+.calc-description p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+.calc-description ul {
+  margin-top: 1rem;
+  padding-left: 1.4rem;
+}
+.calc-description ul li {
+  margin-bottom: 0.6rem;
+  color: #444;
+}
+
+/* --------------------------
+   FORM SECTION
+---------------------------*/
+.calc-form {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+.calc-form form {
+  width: 100%;
+}
+.calc-form form button {
+  display: flex;
+  margin: 1rem auto;
+  background-color: #1f1b18;
+  padding: 0.9rem 1.4rem;
+  border-radius: 0.6rem;
+  font-weight: 500;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* --------------------------
+   FORM STEPS
+---------------------------*/
+.form-step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+.form-step .heading {
+  margin-bottom: 0.8rem;
+}
+.form-step .heading h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+.form-step p {
+  color: red;
+  font-size: 0.9rem;
+}
+.form-step .field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.form-step .field label {
+  font-weight: 500;
+  color: #333;
+}
+.form-step .field input[type=text],
+.form-step .field input[type=url],
+.form-step .field input[type=email],
+.form-step .field input[type=number] {
+  padding: 0.9rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.6rem;
+  background: #fff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+.form-step .field input[type=text]:focus,
+.form-step .field input[type=url]:focus,
+.form-step .field input[type=email]:focus,
+.form-step .field input[type=number]:focus {
+  border-color: #1f1b18;
+  box-shadow: 0 0 0 2px rgba(31, 27, 24, 0.2);
+  outline: none;
+}
+.form-step .field input[type=text]::-moz-placeholder, .form-step .field input[type=url]::-moz-placeholder, .form-step .field input[type=email]::-moz-placeholder, .form-step .field input[type=number]::-moz-placeholder {
+  color: #999;
+}
+.form-step .field input[type=text]::placeholder,
+.form-step .field input[type=url]::placeholder,
+.form-step .field input[type=email]::placeholder,
+.form-step .field input[type=number]::placeholder {
+  color: #999;
+}
+.form-step .field input[type=number]::-webkit-outer-spin-button,
+.form-step .field input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form-step .field input[type=number] {
+  -moz-appearance: textfield;
+}
+.form-step .field input[type=number] {
+  -ms-appearance: none;
+}
+.form-step .field textarea {
+  height: 110px;
+  resize: none;
+}
+.form-step .field #businessModel,
+.form-step .field .brandNeeds,
+.form-step .field .button-options,
+.form-step .field .websiteTraffic,
+.form-step .field .websiteLeads,
+.form-step .field .conversionVolume,
+.form-step .field .conversionSource,
+.form-step .field .conversionGoal,
+.form-step .field .vouchMetrics,
+.form-step .field .revenueChecker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.form-step .field #businessModel .input,
+.form-step .field .brandNeeds .input,
+.form-step .field .button-options .input,
+.form-step .field .websiteTraffic .input,
+.form-step .field .websiteLeads .input,
+.form-step .field .conversionVolume .input,
+.form-step .field .conversionSource .input,
+.form-step .field .conversionGoal .input,
+.form-step .field .vouchMetrics .input,
+.form-step .field .revenueChecker .input {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+.form-step .field p {
+  color: red;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=calc.css.map */
