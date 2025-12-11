@@ -1,0 +1,102 @@
+.founder-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 5rem 2rem 7rem;
+  color: #0c0c0c;
+}
+
+.founder-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+@media (max-width: 900px) {
+  .founder-hero {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.founder-text h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: #1f1b18;
+}
+@media (max-width: 900px) {
+  .founder-text h1 {
+    font-size: 1.9rem;
+  }
+}
+.founder-text .founder-intro {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(12, 12, 12, 0.9);
+}
+
+.founder-image img {
+  width: 100%;
+  height: 650px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+
+.founder-story,
+.founder-philosophy,
+.founder-vision {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  padding: 3.5rem 0;
+  border-top: 1px solid rgba(31, 27, 24, 0.1);
+}
+.founder-story h2,
+.founder-philosophy h2,
+.founder-vision h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f1b18;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.founder-story p,
+.founder-philosophy p,
+.founder-vision p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: rgba(31, 27, 24, 0.85);
+  margin-bottom: 1.4rem;
+}
+@media (max-width: 900px) {
+  .founder-story,
+  .founder-philosophy,
+  .founder-vision {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.founder-philosophy ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+.founder-philosophy ul li {
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+  line-height: 1.7;
+  list-style: square;
+  color: rgba(12, 12, 12, 0.85);
+}
+
+.founder-vision {
+  padding-bottom: 0;
+}
+
+h1,
+h2 {
+  scroll-margin-top: 110px;
+}/*# sourceMappingURL=founder.css.map */

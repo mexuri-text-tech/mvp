@@ -4,7 +4,7 @@ import "./demo.css";
 
 const Step1BrandInfo = ({ formData, handleInputChange, handleButtonSelect, isActive, validationErrors }) => (
     <div className="form-step">
-        <div className="heading"><h1>The Brand</h1></div>
+        <div className="heading"><h1>Understanding The Brand</h1></div>
 
         <div className="field">
             <label htmlFor="companyName">Company Name</label>
@@ -388,7 +388,7 @@ const Demo = () => {
         try {
             await delaySubmission();
 
-            const response = await fetch('http://localhost:5000/api/audit-request', {
+            const response = await fetch('https://mexuri-mvp.onrender.com/api/audit-request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

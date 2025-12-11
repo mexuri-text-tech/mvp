@@ -540,7 +540,7 @@ const Project = () => {
         try {
             await delaySubmission();
 
-            const response = await fetch('http://localhost:5000/api/main-project-request', {
+            const response = await fetch('https://mexuri-mvp.onrender.com/api/main-project-request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

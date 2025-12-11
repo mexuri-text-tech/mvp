@@ -94,7 +94,7 @@ body {
 
                 :nth-child(even) {
                     color: $primary-color;
-                    background-color: $text-light;
+                    background: transparent;
                     border: 1px solid $primary-color;
                 }
 
@@ -369,7 +369,7 @@ body {
             backdrop-filter: blur(50px);
             padding: 2rem;
             border-radius: 1rem;
-            background-color: color.adjust($color: $secondary-color, $lightness: 20%);
+            background-color: color.adjust($color: $secondary-color, $lightness: 35%);
 
             .images {
                 display: flex;
@@ -753,7 +753,7 @@ body {
             width: 100%;
 
             .main {
-                width: 90%;
+                width: 97%;
 
                 .images {
                     display: none;

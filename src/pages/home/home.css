@@ -75,7 +75,7 @@ body {
 }
 .container .hero .hero-main .button :nth-child(even) {
   color: #1f1b18;
-  background-color: #ffffff;
+  background: transparent;
   border: 1px solid #1f1b18;
 }
 .container .hero .hero-main .button button {
@@ -351,7 +351,7 @@ body {
           backdrop-filter: blur(50px);
   padding: 2rem;
   border-radius: 1rem;
-  background-color: rgb(230.5, 218.25, 181.5);
+  background-color: rgb(249.625, 246.9375, 238.875);
 }
 .container .contact .main .images {
   display: flex;
@@ -665,7 +665,7 @@ body {
     width: 100%;
   }
   .container .contact .main {
-    width: 90%;
+    width: 97%;
   }
   .container .contact .main .images {
     display: none;

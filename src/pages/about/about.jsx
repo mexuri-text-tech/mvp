@@ -1,10 +1,20 @@
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/nav/navbar";
-import "./about.css"
+import "./about.css";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
     return (<>
         <Navbar />
+
+        <Helmet>
+            <title>About Mexuri – Brand Growth for African Startups</title>
+            <meta
+                name="description"
+                content="Learn how Mexuri helps African startups and scale-ups grow through branding and conversion-focused systems."
+            />
+            <link rel="canonical" href="https://mexuri.com/about" />
+        </Helmet>
         <div className="about-container">
             <div className="about-main">
                 <section className="intro">
@@ -22,16 +32,16 @@ const About = () => {
 
                             We employ branding and conversion rate optimisation techniques, using them to engineer a two-way lead management system
                             that not only generates leads but equally use these generated leads to generate another set of leads (what we refer to as
-                            vouched leads). creating a steady revenue flow for the company.
+                            vouched leads), creating a steady revenue flow for the company.
                         </p>
                     </div>
 
                     <div className="image">
-                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1764802934/Whisk_374f85525293b12b0c44fcc920d32b25dr_siy2ss.jpg" alt="about us" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765444182/Whisk_39a130e6232151a8a40469a55663aabadr_nprlhu.jpg" alt="about us" />
                     </div>
                 </section>
 
-                <section className="mission">
+                <section className="about-mission">
                     <div className="side">
                         <div className="header">
                             <h1>Our Mission</h1>
@@ -50,11 +60,11 @@ const About = () => {
                     </div>
 
                     <div className="image">
-                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1752326350/Image_fx_2_zizmcr.png" alt="image" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765444181/Whisk_32f1408476ada8688dd40ec20a2f7dcadr_l2o04o.jpg" alt="image" />
                     </div>
                 </section>
 
-                <section className="vision" id="vision">
+                <section className="about-vision" id="vision">
                     <div className="text">
                         <div className="header">
                             <h1>Our Vision</h1>
@@ -76,11 +86,11 @@ const About = () => {
                     </div>
 
                     <div className="image">
-                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765269256/__1_arjftv.jpg" alt="last" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765447453/Whisk_4ab46d464f201debc764859f29cc6d7ddr_gpubva.jpg" alt="last" />
                     </div>
                 </section>
 
-                <section className="future">
+                <section className="about-future">
                     <div className="text">
                         <div className="header">
                             <h1>The Future of Mexuri</h1>
@@ -96,7 +106,7 @@ const About = () => {
                     </div>
 
                     <div className="image">
-                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765270307/k_brruck.jpg" alt="last" />
+                        <img src="https://res.cloudinary.com/dbrjr5zqp/image/upload/c_crop,w_1144/v1765448525/Gemini_Generated_Image_4fmeyr4fmeyr4fme_spdymu.png" alt="last" />
                     </div>
                 </section>
             </div>

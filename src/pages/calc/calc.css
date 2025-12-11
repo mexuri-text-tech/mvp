@@ -72,105 +72,99 @@
 /* --------------------------
    FORM STEPS
 ---------------------------*/
-.form-step {
+.form-step-calc {
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
 }
-.form-step .heading {
+.form-step-calc .heading {
   margin-bottom: 0.8rem;
 }
-.form-step .heading h1 {
+.form-step-calc .heading h1 {
   font-size: 1.8rem;
   font-weight: 600;
   text-align: center;
 }
-.form-step p {
+.form-step-calc p {
   color: red;
   font-size: 0.9rem;
 }
-.form-step .field {
+.form-step-calc .field {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
-.form-step .field label {
+.form-step-calc .field label {
   font-weight: 500;
   color: #333;
 }
-.form-step .field input[type=text],
-.form-step .field input[type=url],
-.form-step .field input[type=email],
-.form-step .field input[type=number] {
+.form-step-calc .field input[type=text],
+.form-step-calc .field input[type=url],
+.form-step-calc .field input[type=email],
+.form-step-calc .field input[type=number] {
   padding: 0.9rem 1rem;
   border: 1px solid #ddd;
   border-radius: 0.6rem;
   background: #fff;
   transition: border 0.2s ease, box-shadow 0.2s ease;
 }
-.form-step .field input[type=text]:focus,
-.form-step .field input[type=url]:focus,
-.form-step .field input[type=email]:focus,
-.form-step .field input[type=number]:focus {
+.form-step-calc .field input[type=text]:focus,
+.form-step-calc .field input[type=url]:focus,
+.form-step-calc .field input[type=email]:focus,
+.form-step-calc .field input[type=number]:focus {
   border-color: #1f1b18;
   box-shadow: 0 0 0 2px rgba(31, 27, 24, 0.2);
   outline: none;
 }
-.form-step .field input[type=text]::-moz-placeholder, .form-step .field input[type=url]::-moz-placeholder, .form-step .field input[type=email]::-moz-placeholder, .form-step .field input[type=number]::-moz-placeholder {
+.form-step-calc .field input[type=text]::-moz-placeholder, .form-step-calc .field input[type=url]::-moz-placeholder, .form-step-calc .field input[type=email]::-moz-placeholder, .form-step-calc .field input[type=number]::-moz-placeholder {
   color: #999;
 }
-.form-step .field input[type=text]::placeholder,
-.form-step .field input[type=url]::placeholder,
-.form-step .field input[type=email]::placeholder,
-.form-step .field input[type=number]::placeholder {
+.form-step-calc .field input[type=text]::placeholder,
+.form-step-calc .field input[type=url]::placeholder,
+.form-step-calc .field input[type=email]::placeholder,
+.form-step-calc .field input[type=number]::placeholder {
   color: #999;
 }
-.form-step .field input[type=number]::-webkit-outer-spin-button,
-.form-step .field input[type=number]::-webkit-inner-spin-button {
+.form-step-calc .field input[type=number]::-webkit-outer-spin-button,
+.form-step-calc .field input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.form-step .field input[type=number] {
-  -moz-appearance: textfield;
-}
-.form-step .field input[type=number] {
-  -ms-appearance: none;
-}
-.form-step .field textarea {
+.form-step-calc .field textarea {
   height: 110px;
   resize: none;
 }
-.form-step .field #businessModel,
-.form-step .field .brandNeeds,
-.form-step .field .button-options,
-.form-step .field .websiteTraffic,
-.form-step .field .websiteLeads,
-.form-step .field .conversionVolume,
-.form-step .field .conversionSource,
-.form-step .field .conversionGoal,
-.form-step .field .vouchMetrics,
-.form-step .field .revenueChecker {
+.form-step-calc .field #businessModel,
+.form-step-calc .field .brandNeeds,
+.form-step-calc .field .button-options,
+.form-step-calc .field .websiteTraffic,
+.form-step-calc .field .websiteLeads,
+.form-step-calc .field .conversionVolume,
+.form-step-calc .field .conversionSource,
+.form-step-calc .field .conversionGoal,
+.form-step-calc .field .vouchMetrics,
+.form-step-calc .field .revenueChecker {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
-.form-step .field #businessModel .input,
-.form-step .field .brandNeeds .input,
-.form-step .field .button-options .input,
-.form-step .field .websiteTraffic .input,
-.form-step .field .websiteLeads .input,
-.form-step .field .conversionVolume .input,
-.form-step .field .conversionSource .input,
-.form-step .field .conversionGoal .input,
-.form-step .field .vouchMetrics .input,
-.form-step .field .revenueChecker .input {
+.form-step-calc .field #businessModel .input,
+.form-step-calc .field .brandNeeds .input,
+.form-step-calc .field .button-options .input,
+.form-step-calc .field .websiteTraffic .input,
+.form-step-calc .field .websiteLeads .input,
+.form-step-calc .field .conversionVolume .input,
+.form-step-calc .field .conversionSource .input,
+.form-step-calc .field .conversionGoal .input,
+.form-step-calc .field .vouchMetrics .input,
+.form-step-calc .field .revenueChecker .input {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 0.8rem;
   margin: 1rem 0;
 }
-.form-step .field p {
+.form-step-calc .field p {
   color: red;
   font-size: 0.9rem;
 }/*# sourceMappingURL=calc.css.map */

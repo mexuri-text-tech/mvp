@@ -41,7 +41,7 @@ const Home = () => {
         setStatus('Sending...');
 
         // --- Validation Check ---
-        const requiredFields = ['companyName', 'country', 'email', 'message'];
+        const requiredFields = ['companyName', 'email', 'message'];
         const missingField = requiredFields.find(field => !formData[field]);
 
         if (missingField) {
@@ -62,7 +62,7 @@ const Home = () => {
 
             if (response.status === 200) {
                 setStatus('Message Sent! We will be in touch shortly.');
-                setFormData({ companyName: '', country: '', email: '', message: '' });
+                setFormData({ companyName: '', email: '', message: '' });
                 setShowPrompt(true);
 
                 setTimeout(() => {
@@ -245,7 +245,7 @@ const Home = () => {
                                 <label htmlFor="email">Email</label>
                                 <input
                                     type="email"
-                                    placeholder="name@yourcompany.com or company@gmail.com"
+                                    placeholder="name@yourcompany.com"
                                     id="email"
                                     value={formData.email}
                                     onChange={handleChange}

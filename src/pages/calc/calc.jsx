@@ -5,7 +5,7 @@ import "./calc.css";
 // --- Form Component (Consolidated) ---
 
 const BrandInfoForm = ({ formData, handleInputChange, validationErrors }) => (
-    <div className="form-step">
+    <div className="form-step-calc">
         <div className="heading"><h1>Conversion Audit Form</h1><hr style={{ width: "40%", margin: "0.5rem auto" }} /></div>
 
         <div className="field">
@@ -45,6 +45,7 @@ const BrandInfoForm = ({ formData, handleInputChange, validationErrors }) => (
                 placeholder="e.g. 100, 200, 250"
                 value={formData.sales || ''}
                 onChange={handleInputChange}
+                autoComplete="off"
             />
             {validationErrors.sales && (
                 <p className="error-message">{validationErrors.sales}</p>
@@ -77,7 +78,9 @@ const ConversionAuditRequest = () => {
     const [validationErrors, setValidationErrors] = useState({});
     const navigate = useNavigate();
     const [navigationMessage, setNavigationMessage] = useState("");
-    const [submitButton, setSubmitButton] = useState("Submit Audit Request")
+    // 💡 Added loading state for disabling the button
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitButton, setSubmitButton] = useState("Submit Audit Request");
 
     const [formData, setFormData] = useState(() => {
         const saved = localStorage.getItem("calcFormData");
@@ -88,10 +91,8 @@ const ConversionAuditRequest = () => {
 
     const handleClosePrompt = () => {
         setShowPrompt(false);
-        setNavigationMessage("Navigating to home page....");
-        setTimeout(() => {
-            navigate("/");
-        }, 1000);
+        // Cleaned up navigation state logic for clarity
+        navigate("/");
     }
 
     const handleInputChange = (e) => {
@@ -131,14 +132,12 @@ const ConversionAuditRequest = () => {
             errors.sales = "Please enter a valid number for clients acquired.";
         }
 
-        // 4. Website Link (Fix applied here)
+        // 4. Website Link
         if (!formData.websiteLink) {
             errors.websiteLink = "Website Link is required.";
         } else if (!urlRegex.test(formData.websiteLink)) {
             errors.websiteLink = "Please enter a valid URL (e.g., https://websitelink.com).";
         }
-
-        // Removed validation checks for 'valueProp', 'businessModel', etc.
 
         return Object.keys(errors).length === 0 ? true : errors;
     };
@@ -149,23 +148,24 @@ const ConversionAuditRequest = () => {
         e.preventDefault();
 
         // 🛑 Final Validation before submission
-        const validationResult = validateForm(); // Now uses validateForm()
+        const validationResult = validateForm();
 
         if (validationResult !== true) {
             setValidationErrors(validationResult);
             return;
         }
 
-        // Clear errors and start submission process
+        // 1. START SUBMISSION FEEDBACK
         setValidationErrors({});
-        const delaySubmission = () => new Promise(resolve => {
-            setTimeout(resolve, 1000); // 1-second delay
-        });
+        setIsSubmitting(true);
+        setSubmitButton("Sending..."); // 💡 Set button text to "Sending..."
 
         try {
+            // Delay submission (for better UX when server is too fast)
+            const delaySubmission = () => new Promise(resolve => setTimeout(resolve, 500));
             await delaySubmission();
 
-            const response = await fetch('http://localhost:5000/api/main-calc-request', {
+            const response = await fetch('https://mexuri-mvp.onrender.com/api/main-calc-request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -174,22 +174,33 @@ const ConversionAuditRequest = () => {
             });
 
             if (response.ok) {
+                // 2. SUCCESS
+                setSubmitButton("Audit Request Sent"); // 💡 Set button text to "Audit Request Sent"
                 setFormData({});
                 localStorage.removeItem("calcFormData");
                 setShowPrompt(true);
-                setSubmitButton("Audit Request Sent");
 
-                setTimeout(() => {
-                    setSubmitButton("Submit Audit Request");
-                }, 3000);
+                // No need for a timeout here, as the success prompt handles navigation.
+                setNavigationMessage(""); // Clear any previous error messages
 
             } else {
+                // 3. SERVER ERROR
+                const errorMessage = "Submission failed. Please try again.";
                 console.error("Submission failed on server side.", await response.text());
-                setNavigationMessage("Submission failed. Please check the console for details.");
+                setNavigationMessage(errorMessage);
+                setSubmitButton("Submit Audit Request"); // 💡 Reset button text on failure
+
             }
         } catch (error) {
+            // 4. NETWORK ERROR
+            const errorMessage = "A network error occurred. Could not reach the server.";
             console.error("Network error during submission:", error);
-            setNavigationMessage("A network error occurred. Could not reach the server.");
+            setNavigationMessage(errorMessage);
+            setSubmitButton("Submit Audit Request"); // 💡 Reset button text on failure
+
+        } finally {
+            // 5. CLEANUP
+            setIsSubmitting(false);
         }
     };
 
@@ -223,13 +234,13 @@ const ConversionAuditRequest = () => {
                             validationErrors={validationErrors}
                         />
 
-                        <button type="submit">
+                        <button type="submit" disabled={isSubmitting}> {/* 💡 Button is disabled during submission */}
                             {submitButton}
                         </button>
                     </form>
 
                     <p
-                        style={{ textAlign: "center" }}>
+                        style={{ textAlign: "center", color: 'red', marginTop: '1rem' }}>
                         {navigationMessage}
                     </p>
                 </div>
@@ -243,7 +254,7 @@ const ConversionAuditRequest = () => {
                     <img src="/check.png" alt="success" />
                     <h1>We've received your request</h1>
                     <p>
-                        Thank you for reaching out to Mexuri! We've successfully received your converison audit request.
+                        Thank you for reaching out to Mexuri! We've successfully received your conversion audit request.
                         We would review it and get back to you via email within 15 minutes
                     </p>
 

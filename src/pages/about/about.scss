@@ -1,13 +1,25 @@
 @use "../../lib/index" as *;
+@use "sass:color";
+
+// --- BREAKPOINTS & CONSTANTS ---
+// Must use raw values as variables were restricted
+$breakpoint-sm: 480px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $padding-section: 60px 20px;
 
 // --- CONTAINER & GLOBAL STYLES ---
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .about-container {
-    background-color: $text-light; // Light cream background for the page
+    background-color: $text-light;
     color: $text-dark;
     padding-top: 50px;
+    overflow-x: hidden;
 }
 
 .about-main {
@@ -16,247 +28,281 @@ $padding-section: 60px 20px;
     padding: 0 15px;
 }
 
-// --- SHARED SECTION STYLES ---
-.intro {
-    padding: $padding-section;
-    margin-bottom: 40px;
-    border-radius: 8px;
-
-    .header {
-        text-align: center;
-    }
-
-    .image {
-        margin-top: 30px;
-    }
-
-    .description {
-        width: 90%;
-        margin: 30px auto;
-        text-align: center;
-
-        p {
-            line-height: 1.7;
-        }
-
-        p br {
-            display: block;
-            margin-bottom: 15px;
-        }
-    }
-
-    .image {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-
-        img {
-            width: 100%;
-            height: 100;
-            object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba($primary-color, 0.1); // Subtle shadow
-        }
-    }
+// Global typography for the page content
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-weight: 700;
 }
 
-.mission {
-    padding: $padding-section;
-    margin-bottom: 40px;
-    border-radius: 8px; // Slight rounding for sections
-    background-color: rgba($secondary-color, 0.1);
-
-    .header {
-        margin-bottom: 20px;
-
-        h1 {
-            color: $primary-color; // Use the gold/tan color for section headings
-        }
-    }
-
-    .description {
-        width: 100%;
-
-
-        p {
-            line-height: 1.7;
-        }
-    }
-
-    .image {
-        display: flex;
-        justify-content: center;
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba($primary-color, 0.1); // Subtle shadow
-        }
-    }
+p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
 }
 
-.vision {
-    padding: $padding-section;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    background-color: rgba($secondary-color, 0.4);
-
-    .text {
-        display: flex;
-        flex-direction: column-reverse;
-
-        .header {
-            width: 100%;
-            text-align: right;
-
-            h1 {
-                color: $primary-color;
-                font-size: 5rem;
-            }
-        }
-
-        .description {
-            width: 100%;
-
-            p {
-                line-height: 1.7;
-            }
-        }
-    }
-
-    ul {
-        list-style: none; // Remove default marker
-        padding-left: 0;
-        margin-top: 15px;
-
-        li {
-            position: relative;
-            margin-bottom: 12px;
-            padding-left: 25px; // Space for custom bullet point
-
-            // Custom bullet point using the primary color
-            &::before {
-                content: '•'; // Or use an icon/symbol
-                color: $primary-color;
-                font-size: 1.5em;
-                position: absolute;
-                left: 0;
-                top: -3px;
-            }
-        }
-    }
-
-    .image {
-        display: flex;
-        justify-content: center;
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba($primary-color, 0.1); // Subtle shadow
-        }
-    }
-}
-
-.future {
-    padding: $padding-section;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    background-color: rgba($primary-color, 0.1);
-
-    .text {
-
-        .header {
-            margin-bottom: 20px;
-
-            h1 {
-                color: $primary-color;
-                font-size: 5rem
-            }
-        }
-
-        .description {
-            width: 100%;
-
-
-            p {
-                line-height: 1.7;
-            }
-        }
-    }
-
-    .image {
-        display: flex;
-        justify-content: center;
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba($primary-color, 0.1); // Subtle shadow
-        }
-    }
-}
-
-// --- MISSION & VISION & FUTURE SECTION LAYOUT (GRID) ---
-
+// --- TWO-COLUMN LAYOUT MIXIN (Adjusted to use raw values) ---
 @mixin two-column-layout($reverse: false) {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
     align-items: center;
 
-    @media (min-width: $breakpoint-md) {
-        grid-template-columns: 1fr 1.2fr; // Slightly larger space for text/image
+    // Tablet (Portrait) and Small Desktop
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1.2fr;
 
-        // Swap column order for alternating layout on desktop
         @if $reverse {
-            grid-template-areas: "image side";
+            grid-template-areas: "image content-side";
         }
 
         @else {
-            grid-template-areas: "side image";
+            grid-template-areas: "content-side image";
         }
     }
 
-    .side,
-    .description {
-        @media (min-width: $breakpoint-md) {
-            grid-area: side;
+    // Larger Tablet (Landscape) and Desktop
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1.5fr;
+
+        @if $reverse {
+            grid-template-areas: "image content-side";
         }
 
-        .header {
-            text-align: left;
+        @else {
+            grid-template-areas: "content-side image";
+        }
+    }
+
+    // Assign Grid Areas
+    &> :not(.image) {
+        @media (min-width: 768px) {
+            grid-area: content-side;
+        }
+    }
+
+    &>.text {
+        @media (min-width: 768px) {
+            grid-area: content-side;
         }
     }
 
     .image {
-        @media (min-width: $breakpoint-md) {
+        @media (min-width: 768px) {
             grid-area: image;
         }
 
         img {
             width: 100%;
             height: auto;
-            max-height: 400px; // Limit image height
+            max-height: 400px;
             object-fit: cover;
         }
     }
 }
 
-// Mission: Text on Left, Image on Right
-.mission {
-    @include two-column-layout($reverse: false);
+
+// --- 1. INTRO SECTION (Full Width/Centered) ---
+.intro {
+    padding: $padding-section;
+    margin-bottom: 60px;
+
+    .header {
+        text-align: center;
+
+        h1 {
+            font-size: $xlarge;
+            color: $primary-color;
+
+            @media (max-width: 767px) {
+                font-size: $large;
+            }
+        }
+    }
+
+    .description {
+        width: 100%;
+        margin: 30px auto 40px auto;
+        text-align: center;
+
+        p {
+            font-size: $medium - 0.1rem;
+            color: color.adjust($text-dark, $lightness: 10%);
+
+            @media (max-width: 767px) {
+                font-size: 1.1rem;
+            }
+        }
+
+        p br {
+            display: none;
+        }
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba($primary-color, 0.25);
+        }
+    }
 }
 
-// Vision: Image on Left, Text on Right (Zig-Zag effect)
-.vision {
+// --- 2. MISSION SECTION (Two-Column Layout) ---
+.about-mission {
+    padding: $padding-section;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    background-color: rgba($secondary-color, 0.1);
+
+    @include two-column-layout($reverse: false);
+
+    .header {
+        margin-bottom: 1.5rem;
+
+        h1 {
+            color: $primary-color;
+            font-size: $xlarge;
+
+            @media (max-width: 767px) {
+                font-size: $large;
+            }
+        }
+    }
+
+    .description p {
+        color: $text-dark;
+    }
+
+    .image img {
+        border-radius: 8px;
+    }
+}
+
+// --- 3. VISION SECTION (Reversed Two-Column Layout) ---
+.about-vision {
+    padding: $padding-section;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    background-color: rgba($primary-color, 0.05);
+
     @include two-column-layout($reverse: true);
+
+    .text {
+
+        .header {
+            margin-bottom: 1rem;
+            text-align: right;
+
+            @media (max-width: 767px) {
+                text-align: center;
+            }
+
+            h1 {
+                color: $secondary-color;
+                font-size: $xlarge;
+
+                @media (min-width: 768px) {
+                    font-size: $xlarge;
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.5rem;
+
+            li {
+                position: relative;
+                margin-bottom: 1rem;
+                padding-left: 30px;
+                font-weight: 500;
+
+                &::before {
+                    content: '✓';
+                    color: $secondary-color;
+                    font-size: $medium;
+                    line-height: 1;
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                }
+            }
+        }
+    }
+
+    .image img {
+        border-radius: 8px;
+    }
 }
 
-// Future: Text on Left, Image on Right (Standard order - or change if desired)
-.future {
+// --- 4. FUTURE SECTION (Two-Column Layout) ---
+.about-future {
+    padding: $padding-section;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    background-color: rgba($secondary-color, 0.1);
+
     @include two-column-layout($reverse: false);
+
+    .text {
+
+        .header {
+            margin-bottom: 1.5rem;
+
+            h1 {
+                color: $primary-color;
+                font-size: $xlarge;
+
+                @media (max-width: 767px) {
+                    font-size: $large;
+                }
+            }
+        }
+    }
+
+    .image img {
+        border-radius: 8px;
+    }
+}
+
+// --- MOBILE ADJUSTMENTS (General) ---
+@media (max-width: 767px) {
+    .about-main {
+        padding: 0 10px;
+    }
+
+    .about-mission,
+    .about-vision,
+    .about-future,
+    .intro {
+        padding: 40px 15px;
+        margin-bottom: 40px;
+    }
+}
+
+// --- SMALL MOBILE DEVICES (< 480px) ---
+@media (max-width: 479px) {
+    .about-main {
+        padding: 0 10px;
+    }
+
+    // Scale down headings further for very small screens
+    .intro h1,
+    .about-mission h1,
+    .about-vision h1,
+    .about-future h1 {
+        font-size: 2rem !important;
+    }
+
+    .intro .description p {
+        font-size: 1rem;
+    }
 }
