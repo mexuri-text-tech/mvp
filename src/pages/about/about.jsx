@@ -1,20 +1,10 @@
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/nav/navbar";
 import "./about.css";
-import { Helmet } from "react-helmet-async";
 
 const About = () => {
     return (<>
         <Navbar />
-
-        <Helmet>
-            <title>About Mexuri – Brand Growth for African Startups</title>
-            <meta
-                name="description"
-                content="Learn how Mexuri helps African startups and scale-ups grow through branding and conversion-focused systems."
-            />
-            <link rel="canonical" href="https://mexuri.com/about" />
-        </Helmet>
         <div className="about-container">
             <div className="about-main">
                 <section className="intro">

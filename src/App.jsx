@@ -7,25 +7,22 @@ import About from "./pages/about/about";
 import TermsPage from "./pages/terms/terms";
 import ConversionAuditRequest from "./pages/calc/calc";
 import Founder from "./pages/founder/founder";
-import { HelmetProvider } from "react-helmet-async";
 
 function App() {
 
   return (
-    <HelmetProvider>
-      <Router>
-        <ScrollToHash />
-        <Routes>
-          <Route element={<Home />} path="/" />
-          <Route element={<Demo />} path="/demo" />
-          <Route element={<Project />} path="/project" />
-          <Route element={<About />} path="/about" />
-          <Route element={<TermsPage />} path="/terms-and-conditions" />
-          <Route element={<ConversionAuditRequest />} path="/conversion-audit-request" />
-          <Route element={<Founder />} path="/founder" />
-        </Routes>
-      </Router>
-    </HelmetProvider>
+    <Router>
+      <ScrollToHash />
+      <Routes>
+        <Route element={<Home />} path="/" />
+        <Route element={<Demo />} path="/demo" />
+        <Route element={<Project />} path="/project" />
+        <Route element={<About />} path="/about" />
+        <Route element={<TermsPage />} path="/terms-and-conditions" />
+        <Route element={<ConversionAuditRequest />} path="/conversion-audit-request" />
+        <Route element={<Founder />} path="/founder" />
+      </Routes>
+    </Router>
   )
 }
 

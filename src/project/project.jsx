@@ -579,7 +579,7 @@ const Project = () => {
             <div className="project-main">
                 <div className="project-description">
                     <div className="project-header">
-                        <h1>Transform Your Pipeline: The Mexuri Full-Funnel Build & Conversion Program</h1>
+                        <h1>Transform Your Pipeline: The Mexuri Full-Funnel Build & Conversion System</h1>
                     </div>
                     <div className="project-body">
                         <p>

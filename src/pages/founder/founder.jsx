@@ -2,39 +2,10 @@
 import Navbar from "../../components/nav/navbar";
 import Footer from "../../components/footer/footer";
 import "./founder.css"; // Using SCSS import
-import { Helmet } from "react-helmet-async";
 
 const Founder = () => {
     return (
         <>
-            <Helmet>
-                {/* 1. Standard SEO Tags */}
-                <title>Founder – Mexuri</title>
-                <meta
-                    name="description"
-                    content="Meet the founder of Mexuri and learn the philosophy behind building scalable, conversion-driven brands for African startups and scale-ups."
-                />
-                <link
-                    rel="canonical"
-                    href="https://mexuri.com/founder"
-                />
-
-                {/* 2. Open Graph (Social Sharing) Tags */}
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://mexuri.com.ng/founder" />
-                <meta property="og:title" content="Founder – Mexuri: Building Conversion-Driven Brands" />
-                <meta
-                    property="og:description"
-                    content="Meet the founder of Mexuri and learn the philosophy behind building scalable, conversion-driven brands for African startups and scale-ups."
-                />
-                <meta
-                    property="og:image"
-                    content="https://res.cloudinary.com/dbrjr5zqp/image/upload/v1765407539/1000833911_edx3xt.jpg"
-                />
-                <meta property="og:site_name" content="Mexuri" />
-
-            </Helmet>
-
             <Navbar />
 
             <main className="founder-container">
