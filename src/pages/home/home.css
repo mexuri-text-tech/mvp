@@ -75,7 +75,7 @@ body {
 }
 .container .hero .hero-main .button :nth-child(even) {
   color: #1f1b18;
-  background: transparent;
+  background: #ffffff;
   border: 1px solid #1f1b18;
 }
 .container .hero .hero-main .button button {
@@ -453,6 +453,9 @@ body {
   .container .hero .hero-main .figcaption {
     width: 70%;
   }
+  .container .hero .hero-main .button button {
+    padding: 0.5rem 0.6rem;
+  }
   .container .next .main figure {
     width: 95%;
     height: auto;
@@ -572,7 +575,7 @@ body {
     justify-content: center;
     align-content: center;
     height: auto;
-    width: 95%;
+    width: 99%;
   }
   .container .startUp figure figcaption {
     width: auto;
@@ -611,7 +614,7 @@ body {
     justify-content: center;
     align-content: center;
     height: auto;
-    width: 95%;
+    width: 99%;
   }
   .container .scaleUps figure .image {
     display: none;
@@ -648,8 +651,8 @@ body {
   }
   .container .end {
     width: 100%;
-    background-image: url("https://res.cloudinary.com/dbrjr5zqp/image/upload/v1764890680/3_oqjsp9.png");
-    height: 80vh;
+    background-image: linear-gradient(rgba(31, 27, 24, 0.3), rgba(31, 27, 24, 0.2)), url("https://res.cloudinary.com/dbrjr5zqp/image/upload/v1764890680/3_oqjsp9.png");
+    height: 85vh;
   }
   .container .end .main figcaption {
     display: flex;

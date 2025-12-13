@@ -13,11 +13,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
-@media (max-width: 900px) {
-  .calc-main {
-    grid-template-columns: 1fr;
-  }
-}
 
 .calc-description {
   background: hsl(60, 80%, 105.1960784314%);
@@ -167,4 +162,20 @@
 .form-step-calc .field p {
   color: red;
   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 900px) {
+  .calc-container h1 {
+    font-size: 1.9rem;
+  }
+  .calc-container .calc-main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .calc-container .calc-main .calc-description {
+    padding: 0.5rem 0.8rem;
+  }
+  .calc-container .calc-main .calc-form {
+    padding: 2rem 1.5rem;
+  }
 }/*# sourceMappingURL=calc.css.map */

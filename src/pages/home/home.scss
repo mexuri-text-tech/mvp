@@ -94,7 +94,7 @@ body {
 
                 :nth-child(even) {
                     color: $primary-color;
-                    background: transparent;
+                    background: $text-light;
                     border: 1px solid $primary-color;
                 }
 
@@ -486,6 +486,12 @@ body {
                 .figcaption {
                     width: 70%; // Increase figcaption width for readability
                 }
+
+                .button {
+                    button {
+                        padding: 0.5rem 0.6rem;
+                    }
+                }
             }
         }
 
@@ -650,7 +656,7 @@ body {
             figure {
                 @include flex(column-reverse, center, center);
                 height: auto;
-                width: 95%;
+                width: 99%;
 
                 figcaption {
                     width: auto;
@@ -693,7 +699,7 @@ body {
             figure {
                 @include flex(column, center, center);
                 height: auto;
-                width: 95%;
+                width: 99%;
 
                 .image {
                     display: none;
@@ -733,8 +739,8 @@ body {
 
         .end {
             width: 100%;
-            background-image: url("https://res.cloudinary.com/dbrjr5zqp/image/upload/v1764890680/3_oqjsp9.png");
-            height: 80vh;
+            background-image: linear-gradient(rgba($primary-color, 0.3), rgba($primary-color, 0.2)), url("https://res.cloudinary.com/dbrjr5zqp/image/upload/v1764890680/3_oqjsp9.png");
+            height: 85vh;
 
             .main {
 

@@ -13,11 +13,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
-@media (max-width: 900px) {
-  .project-main {
-    grid-template-columns: 1fr;
-  }
-}
 
 .project-description {
   background: hsl(60, 80%, 105.1960784314%);
@@ -34,6 +29,9 @@
 .project-description p {
   margin-bottom: 1rem;
   color: #333;
+}
+.project-description h2 {
+  color: rgba(31, 27, 24, 0.9);
 }
 .project-description ul {
   margin-top: 1rem;
@@ -285,4 +283,20 @@
 }
 .navigation-buttons button.submit-button:hover {
   background: rgb(42.4981818182, 37.0145454545, 32.9018181818);
+}
+
+@media screen and (max-width: 900px) {
+  .project-container h1 {
+    font-size: 1.9rem;
+  }
+  .project-container .project-main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .project-container .project-main .project-description {
+    padding: 0.5rem;
+  }
+  .project-container .project-main .project-form {
+    padding: 2rem 1.5rem;
+  }
 }/*# sourceMappingURL=project.css.map */

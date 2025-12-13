@@ -388,7 +388,7 @@ const Demo = () => {
         try {
             await delaySubmission();
 
-            const response = await fetch('https://mexuri-mvp.onrender.com/api/audit-request', {
+            const response = await fetch('http://localhost:5000/api/audit-request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

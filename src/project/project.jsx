@@ -355,6 +355,12 @@ const Step4ContactInfo = ({ handleButtonSelect, isActive, validationErrors }) =>
                         className={isActive("vouchMetrics", "> 30%") ? "active" : ""}
                         onClick={() => handleButtonSelect("vouchMetrics", "> 30%")}
                     />
+                    <input
+                        type="button"
+                        value="We don't track"
+                        className={isActive("vouchMetrics", "We don't track") ? "active" : ""}
+                        onClick={() => handleButtonSelect("vouchMetrics", "We don't track")}
+                    />
                 </div>
             </div>
             {validationErrors.vouchMetrics && (
@@ -540,7 +546,7 @@ const Project = () => {
         try {
             await delaySubmission();
 
-            const response = await fetch('https://mexuri-mvp.onrender.com/api/main-project-request', {
+            const response = await fetch('http://localhost:5000/api/main-project-request', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -577,21 +583,32 @@ const Project = () => {
                     </div>
                     <div className="project-body">
                         <p>
-                            This isn't just an audit—it's a strategic partnership designed to fix your biggest revenue bottlenecks. We rebuild the foundations of your growth by optimizing your brand messaging and converting more leads into guaranteed sales.
-                        </p>
-                        <p>
-                            Stop losing qualified customers due to weak messaging or leaky funnels. Our program provides the strategic assets and technical optimizations needed to achieve sustainable scale.
+                            Stop losing qualified customers due to weak messaging or leaky funnels.
+                            Our program provides the strategic assets and technical optimizations needed to achieve sustainable scale.
+                            We engineer lead systems that optimizes your brand messaging and converts more leads into guaranteed sales.
                         </p>
                         <p id="packageRequirement" style={{ fontWeight: "600" }}>The Full Conversion Program Delivers:</p>
 
+
+                        <h2>Phase 1: Diagnosis</h2>
                         <ul>
-                            <li>Brand Messaging Architecture: Clarifying your unique value to attract your ICP.</li>
-                            <li>Technical CRO Setup & Strategy: Maximizing conversions through data-driven testing.</li>
-                            <li>Customized Lead Strategy Roadmap</li>
-                            <li>Performance & Funnel Health Audit</li>
-                            <li>Dedicated Strategy Sessions & Results Handover</li>
-                            <li>Conversion System Optimisation</li>
-                            <li>Performance Reports</li>
+                            <li>Funnel and performance audit</li>
+                            <li>Brand message and clarity analysis</li>
+                            <li>Data baseline setup</li>
+                        </ul>
+
+                        <h2>Phase 2: System Architecture</h2>
+                        <ul>
+                            <li>Messaging architecture</li>
+                            <li>Lead & funnel strategy roadmap</li>
+                            <li>Data baseline setup</li>
+                        </ul>
+
+                        <h2>Phase 3: Optimisation</h2>
+                        <ul>
+                            <li>CRO implementation and testing</li>
+                            <li>Funnel optimization</li>
+                            <li>Performance tracking and reporting</li>
                         </ul>
                     </div>
                 </div>

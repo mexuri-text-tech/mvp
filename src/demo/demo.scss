@@ -23,10 +23,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-
-    @media (max-width: 900px) {
-        grid-template-columns: 1fr;
-    }
 }
 
 .demo-description {
@@ -250,6 +246,28 @@
 
             &:hover {
                 background: color.adjust($color: $primary-color, $lightness: 4%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .demo-container {
+
+        h1 {
+            font-size: $large - 0.1rem;
+        }
+
+        .demo-main {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+
+            .demo-description {
+                padding: 0.5rem;
+            }
+
+            .demo-form {
+                padding: 2rem 1.5rem;
             }
         }
     }

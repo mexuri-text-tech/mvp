@@ -58,7 +58,23 @@ const Home = () => {
 
         // --- Submission Logic ---
         try {
-            const response = await axios.post('https://mexuri-mvp.onrender.com/api/send-email', formData);
+
+            const ipResponse = await axios.get('https://ipwho.is/');
+
+            if (ipResponse.data && ipResponse.data.success) {
+                // Extract the country name
+                const country = ipResponse.data.country || 'Unknown';
+
+                // Add the country to the form data object for submission
+                formData.country = country;
+
+            } else {
+                console.warn("Could not retrieve country data, proceeding with submission.");
+                // If the IP lookup fails, we still want to submit the form without the country
+                formData.country = 'IP Lookup Failed';
+            }
+
+            const response = await axios.post('http://localhost:5000/api/send-email', formData);
 
             if (response.status === 200) {
                 setStatus('Message Sent! We will be in touch shortly.');
@@ -205,7 +221,7 @@ const Home = () => {
                         <h1>The Data-Driven Results You Need</h1>
 
                         <p>
-                            We provide detailed weekly reports focused not just on vanity metrics, but on pipeline health, LTV, and CAC.
+                            We provide detailed weekly reports focused not just on vanity metrics, but on pipeline health, Lifetime Value (LTV), and  Customer Acquisition Cost (CAC).
                             <br />
                             Our data-driven approach gives you clear visibility into your brand’s performance. With timely reports and organic insights,
                             you’ll always know what’s working, what needs improvement, and how your business is growing.

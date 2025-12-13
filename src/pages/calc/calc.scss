@@ -23,10 +23,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-
-    @media (max-width: 900px) {
-        grid-template-columns: 1fr;
-    }
 }
 
 .calc-description {
@@ -173,6 +169,30 @@
         p {
             color: red;
             font-size: $small - 0.1rem;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .calc-container {
+
+        h1 {
+            font-size: $large - 0.1rem;
+        }
+
+        .calc-main {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+
+            .calc-description {
+                padding: 0.5rem 0.8rem;
+            }
+
+            .calc-form {
+                padding: 2rem 1.5rem;
+            }
         }
     }
 }
